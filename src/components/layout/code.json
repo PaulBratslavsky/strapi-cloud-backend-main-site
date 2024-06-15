@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_layout_codes",
+  "info": {
+    "displayName": "Code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "code": {
+      "type": "text"
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "javascript",
+        "typescript",
+        "python",
+        "go",
+        "csharp",
+        "html",
+        "css",
+        "json",
+        "markdown",
+        "sql",
+        "shell",
+        "php",
+        "plaintext",
+        "dockerfile",
+        "javascriptreact",
+        "typescriptreact",
+        "jsonc",
+        "c"
+      ]
+    }
+  }
+}

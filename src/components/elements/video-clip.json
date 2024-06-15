@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_video_clips",
+  "info": {
+    "displayName": "Video Clip"
+  },
+  "options": {},
+  "attributes": {
+    "start": {
+      "type": "float"
+    },
+    "end": {
+      "type": "float"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

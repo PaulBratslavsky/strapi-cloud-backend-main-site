@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_layout_post_lists",
+  "info": {
+    "displayName": "Post List"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
+    }
+  }
+}

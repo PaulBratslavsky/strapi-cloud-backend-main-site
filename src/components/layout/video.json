@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_layout_videos",
+  "info": {
+    "displayName": "Video"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "videoId": {
+      "type": "string"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "clip": {
+      "displayName": "Video Clip",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.video-clip"
+    }
+  }
+}
