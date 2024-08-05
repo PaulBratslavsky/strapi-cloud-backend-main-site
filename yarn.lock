@@ -2148,21 +2148,10 @@
     plop "2.7.6"
     pluralize "8.0.0"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-"@strapi/helper-plugin@4.25.6", "@strapi/helper-plugin@^4.6.0":
-=======
-"@strapi/helper-plugin@4.25.6":
->>>>>>> 44a8059 (updates)
-  version "4.25.6"
-  resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.25.6.tgz#22075e444257138c39d20b803e7deeaec44e60d2"
-  integrity sha512-T45lfzPOJZXbQ6nGc9WjkAciTcZvCMQeEk4o0u6pQiSAabhMzpN0gsGgrapFQ2EuPwE91O4TXh53mdIdEcEiDQ==
-=======
 "@strapi/i18n@5.0.0-rc.8":
   version "5.0.0-rc.8"
   resolved "https://registry.yarnpkg.com/@strapi/i18n/-/i18n-5.0.0-rc.8.tgz#ed2abba9d77c8c0a4307441a70f84c3134569a56"
   integrity sha512-jH4cSF93MA3Rp+21P/AgMowXjbro3+0D40WpEUpfOlBFEQROqScd34P2ErwplZmXvkGZhnCxp9lrqE1ReH2o+Q==
->>>>>>> f1ac21d (migrat to strapi 5)
   dependencies:
     "@reduxjs/toolkit" "1.9.7"
     "@strapi/design-system" "2.0.0-beta.6"
@@ -2225,30 +2214,10 @@
     qs "6.11.1"
     sift "16.0.1"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-"@strapi/plugin-cloud@4.25.6":
-  version "4.25.6"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-cloud/-/plugin-cloud-4.25.6.tgz#6bf86a8fa7c8e0e3afc4f0272dfde96051998ab9"
-  integrity sha512-8rK/B3QRtlRIxT120kUNdEKUMMim37Y20l/NJI++3YxN8Tc4I4NBoRpBK5JWSdLWYD5QC1/RpmYHXkpOJSyEJA==
-  dependencies:
-    "@strapi/design-system" "1.19.0"
-    "@strapi/helper-plugin" "4.25.6"
-    "@strapi/icons" "1.19.0"
-    react-intl "6.4.1"
-
-=======
->>>>>>> 44a8059 (updates)
-"@strapi/plugin-content-manager@4.25.6":
-  version "4.25.6"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-content-manager/-/plugin-content-manager-4.25.6.tgz#58f7f3ecc0e4e249253638c0e229e678cc712568"
-  integrity sha512-HJVbdEXkARrHXgjA9RRKJ7ItSSvv751eseT17DsyG+qzgZpCUBr189tKJdw1t+b0A3z0yHk/M1HGN2/Oq3Hw5g==
-=======
 "@strapi/plugin-users-permissions@5.0.0-rc.8":
   version "5.0.0-rc.8"
   resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-5.0.0-rc.8.tgz#5dec9d0b4a9a5bc78df9030f970c92043ed80a02"
   integrity sha512-e2uqF+YZQZNM0cQvv0Olge++HSLrdW7FXuxjOrnnKzdflpJS7AVmFhZLXZ8SUvvUbWgJ604RAzL9D0G1aS6V6Q==
->>>>>>> f1ac21d (migrat to strapi 5)
   dependencies:
     "@strapi/design-system" "2.0.0-beta.6"
     "@strapi/icons" "2.0.0-beta.6"
@@ -2901,21 +2870,6 @@
   integrity sha512-AOmuRF0R2/5j1knA3c6G3HOk523Ga+l+ZXltX8SF1+5oqcXijjfTd8fY3XRZqSihEu9XhtQnKYLmkFaoxgsJHw==
   dependencies:
     undici-types "~6.13.0"
-<<<<<<< HEAD
-
-"@types/node@^10.0.3":
-  version "10.17.60"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.60.tgz#35f3d6213daed95da7f0f73e75bcc6980e90597b"
-  integrity sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==
-
-"@types/node@^18.11.18":
-  version "18.19.43"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.43.tgz#fe01bb599b60bb3279c26d0fdb751d2f3e299ae0"
-  integrity sha512-Mw/YlgXnyJdEwLoFv2dpuJaDFriX+Pc+0qOBJ57jC1H6cDxIj2xc5yUrdtArDVG0m+KV6622a4p2tenEqB3C/g==
-  dependencies:
-    undici-types "~5.26.4"
-=======
->>>>>>> 44a8059 (updates)
 
 "@types/nodemon@1.19.6":
   version "1.19.6"
@@ -3876,14 +3830,6 @@ caniuse-lite@^1.0.30001646:
   version "1.0.30001649"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001649.tgz#3ec700309ca0da2b0d3d5fb03c411b191761c992"
   integrity sha512-fJegqZZ0ZX8HOWr6rcafGr72+xcgJKI9oWfDW5DrD7ExUtgZC7a7R7ZYmZqplh7XDocFdGeIFn7roAxhOeYrPQ==
-<<<<<<< HEAD
-
-caseless@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
-  integrity sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==
-=======
->>>>>>> 44a8059 (updates)
 
 chalk@4.1.2, chalk@^4.1.0, chalk@^4.1.1, chalk@^4.1.2:
   version "4.1.2"
@@ -7271,23 +7217,6 @@ lunr@^2.3.9:
   resolved "https://registry.yarnpkg.com/lunr/-/lunr-2.3.9.tgz#18b123142832337dd6e964df1a5a7707b25d35e1"
   integrity sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==
 
-<<<<<<< HEAD
-luxon@^3.2.1:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.5.0.tgz#6b6f65c5cd1d61d1fd19dbf07ee87a50bf4b8e20"
-  integrity sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ==
-<<<<<<< HEAD
-
-m3u8stream@^0.8.6:
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/m3u8stream/-/m3u8stream-0.8.6.tgz#0d6de4ce8ee69731734e6b616e7b05dd9d9a55b1"
-  integrity sha512-LZj8kIVf9KCphiHmH7sbFQTVe4tOemb202fWwvJwR9W5ENW/1hxJN6ksAWGhQgSBSa3jyWhnjKU1Fw1GaOdbyA==
-  dependencies:
-    miniget "^4.2.2"
-    sax "^1.2.4"
-=======
->>>>>>> 44a8059 (updates)
-=======
 luxon@^1.26.0:
   version "1.28.1"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.28.1.tgz#528cdf3624a54506d710290a2341aa8e6e6c61b0"
@@ -7297,7 +7226,6 @@ lz-string@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.5.0.tgz#c1ab50f77887b712621201ba9fd4e3a6ed099941"
   integrity sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==
->>>>>>> f1ac21d (migrat to strapi 5)
 
 mailcomposer@3.12.0:
   version "3.12.0"
@@ -8011,35 +7939,6 @@ open@8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
-<<<<<<< HEAD
-open@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/open/-/open-9.1.0.tgz#684934359c90ad25742f5a26151970ff8c6c80b6"
-  integrity sha512-OS+QTnw1/4vrf+9hh1jc1jnYjzSG4ttTBB8UxOwAnInG3Uo4ssetzC1ihqaIHjLJnA5GGlRl6QlZXOTQhRBUvg==
-  dependencies:
-    default-browser "^4.0.0"
-    define-lazy-prop "^3.0.0"
-    is-inside-container "^1.0.0"
-    is-wsl "^2.2.0"
-
-<<<<<<< HEAD
-openai@^4.33.0:
-  version "4.54.0"
-  resolved "https://registry.yarnpkg.com/openai/-/openai-4.54.0.tgz#eeb209c6892b997e524181b6ddb7e27bf4d09389"
-  integrity sha512-e/12BdtTtj+tXs7iHm+Dm7H7WjEWnw7O52B2wSfCQ6lD5F6cvjzo7cANXy5TJ1Q3/qc8YRPT5wBTTFtP5sBp1g==
-  dependencies:
-    "@types/node" "^18.11.18"
-    "@types/node-fetch" "^2.6.4"
-    abort-controller "^3.0.0"
-    agentkeepalive "^4.2.1"
-    form-data-encoder "1.7.2"
-    formdata-node "^4.3.2"
-    node-fetch "^2.6.7"
-
-=======
->>>>>>> 44a8059 (updates)
-=======
->>>>>>> f1ac21d (migrat to strapi 5)
 opener@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.2.tgz#5d37e1f35077b9dcac4301372271afdeb2a13598"
@@ -8976,11 +8875,7 @@ read-pkg@^5.2.0:
     parse-json "^5.0.0"
     type-fest "^0.6.0"
 
-<<<<<<< HEAD
-readable-stream@^3.0.2, readable-stream@^3.1.1, readable-stream@^3.4.0, readable-stream@^3.6.0, readable-stream@^3.6.2:
-=======
 readable-stream@^3.1.1, readable-stream@^3.4.0, readable-stream@^3.6.0, readable-stream@^3.6.2:
->>>>>>> 44a8059 (updates)
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.2.tgz#56a9b36ea965c00c5a93ef31eb111a0f11056967"
   integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
@@ -10438,17 +10333,10 @@ undici-types@~6.13.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.13.0.tgz#e3e79220ab8c81ed1496b5812471afd7cf075ea5"
   integrity sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==
 
-<<<<<<< HEAD
-undici-types@~6.13.0:
-  version "6.13.0"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.13.0.tgz#e3e79220ab8c81ed1496b5812471afd7cf075ea5"
-  integrity sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==
-=======
 undici@6.18.2:
   version "6.18.2"
   resolved "https://registry.yarnpkg.com/undici/-/undici-6.18.2.tgz#f662a5dc33cf654fc412a9912e5a07b138d75c97"
   integrity sha512-o/MQLTwRm9IVhOqhZ0NQ9oXax1ygPjw6Vs+Vq/4QRjbOAC3B1GCHy7TYxxbExKlb7bzDRzt9vBWU6BDz0RFfYg==
->>>>>>> f1ac21d (migrat to strapi 5)
 
 union-value@^1.0.0:
   version "1.0.1"
@@ -10683,16 +10571,6 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-web-streams-polyfill@4.0.0-beta.3:
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-4.0.0-beta.3.tgz#2898486b74f5156095e473efe989dcf185047a38"
-  integrity sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==
-
-=======
->>>>>>> 44a8059 (updates)
-=======
 web-encoding@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/web-encoding/-/web-encoding-1.1.5.tgz#fc810cf7667364a6335c939913f5051d3e0c4864"
@@ -10702,7 +10580,6 @@ web-encoding@^1.1.5:
   optionalDependencies:
     "@zxing/text-encoding" "0.9.0"
 
->>>>>>> f1ac21d (migrat to strapi 5)
 webidl-conversions@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
