@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sites",
+  "info": {
+    "singularName": "site",
+    "pluralName": "sites",
+    "displayName": "Site",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "topNav": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.top-nav"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post-group.post-group"
+    }
+  }
+}

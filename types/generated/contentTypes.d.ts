@@ -634,6 +634,35 @@ export interface ApiPostGroupPostGroup extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSiteSite extends Struct.CollectionTypeSchema {
+  collectionName: 'sites';
+  info: {
+    singularName: 'site';
+    pluralName: 'sites';
+    displayName: 'Site';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    url: Schema.Attribute.UID<'title'>;
+    topNav: Schema.Attribute.Component<'layout.top-nav', false>;
+    pages: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
+    posts: Schema.Attribute.Relation<'oneToOne', 'api::post-group.post-group'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+  };
+}
+
 export interface ApiSongSong extends Struct.CollectionTypeSchema {
   collectionName: 'songs';
   info: {
@@ -1027,6 +1056,7 @@ declare module '@strapi/strapi' {
       'api::page.page': ApiPagePage;
       'api::post.post': ApiPostPost;
       'api::post-group.post-group': ApiPostGroupPostGroup;
+      'api::site.site': ApiSiteSite;
       'api::song.song': ApiSongSong;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
