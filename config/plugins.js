@@ -23,4 +23,7 @@ module.exports = ({ env }) => ({
       openAIApiKey: process.env.OPENAI_API_KEY,
     },
   },
+  'utilai': {
+      enabled: true,
+    },
 });
