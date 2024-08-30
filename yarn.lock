@@ -10476,10 +10476,10 @@ utila@~0.4:
   resolved "https://registry.yarnpkg.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha512-Z0DbgELS9/L/75wZbro8xAnT50pBVFQZ+hUEueGDU5FN51YSCYM+jdxsfCiHjwNP/4LCDD0i/graKpeBnOXKRA==
 
-utilai@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/utilai/-/utilai-0.0.1.tgz#2b01ce213b24d7e171b40a26a192ef9610ff479c"
-  integrity sha512-YSOj9zNQR+kPs/XI86T9TCobYf/vWpbNmshwZPoDTMJNcUckbo+7EUTM74/rj6KfS9q+XWfv6Trb2RI1WLfFow==
+utilai@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/utilai/-/utilai-0.0.2.tgz#b100f55b470ce348d0a1fa1747ca764cc09b3b88"
+  integrity sha512-oKq/+6YcmZNk1Nu/VYPG040o3l5ZZ29S1l+HDKmFSYOF4tXTQ3PdqwZ8IuN2jpvtfb9382/3EC8QKkulKuSrsA==
   dependencies:
     youtube-transcript "^1.2.1"
 
