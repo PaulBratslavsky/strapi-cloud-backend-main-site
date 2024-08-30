@@ -20,7 +20,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0",
-    "utilai": "^0.0.2"
+    "utilai": "^0.0.3"
   },
   "author": {
     "name": "A Strapi developer"
