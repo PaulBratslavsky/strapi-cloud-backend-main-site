@@ -25,5 +25,8 @@ module.exports = ({ env }) => ({
   },
   'utilai': {
       enabled: true,
-    },
+  },
+  "get-strapi-schema": {
+    enabled: true,
+  },
 });
