@@ -11,8 +11,8 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-users-permissions": "5.0.0-rc.12",
-    "@strapi/strapi": "5.0.0-rc.12",
+    "@strapi/plugin-users-permissions": "5.4.0",
+    "@strapi/strapi": "5.4.0",
     "better-sqlite3": "8.6.0",
     "get-strapi-schema": "^0.0.3",
     "pg": "^8.11.3",
