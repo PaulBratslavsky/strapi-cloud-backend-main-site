@@ -28,7 +28,7 @@ module.exports = ({ env }) => ({
   },
 'yt-transcript': {
     enabled: true,
-    // resolve: './src/plugins/yt-transcript',
+    resolve: './src/plugins/yt-transcript',
     config: {
       openAIApiKey: env('OPENAI_API_KEY'),
       model: env('OPEN_AI_MODEL', 'gpt-4o-mini'),
