@@ -22,7 +22,7 @@
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0",
     "utilai": "^0.0.4",
-    "yt-transcript-strapi-plugin": "^0.0.5"
+    "yt-transcript-strapi-plugin": "^0.0.6"
   },
   "author": {
     "name": "A Strapi developer"
