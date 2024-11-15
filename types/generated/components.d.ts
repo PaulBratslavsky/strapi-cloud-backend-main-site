@@ -1,44 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ElementsVideoClip extends Struct.ComponentSchema {
-  collectionName: 'components_elements_video_clips';
-  info: {
-    displayName: 'Video Clip';
-  };
-  attributes: {
-    start: Schema.Attribute.Float;
-    end: Schema.Attribute.Float;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface ElementsLink extends Struct.ComponentSchema {
-  collectionName: 'components_elements_links';
-  info: {
-    displayName: 'Link';
-    description: '';
-  };
-  attributes: {
-    text: Schema.Attribute.String;
-    href: Schema.Attribute.String;
-    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ElementsButtonLink extends Struct.ComponentSchema {
-  collectionName: 'components_elements_button_links';
-  info: {
-    displayName: 'Button Link';
-    description: '';
-  };
-  attributes: {
-    text: Schema.Attribute.String;
-    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY']>;
-    href: Schema.Attribute.String;
-  };
-}
-
 export interface LayoutVideo extends Struct.ComponentSchema {
   collectionName: 'components_layout_videos';
   info: {
@@ -125,17 +86,56 @@ export interface LayoutCode extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsVideoClip extends Struct.ComponentSchema {
+  collectionName: 'components_elements_video_clips';
+  info: {
+    displayName: 'Video Clip';
+  };
+  attributes: {
+    start: Schema.Attribute.Float;
+    end: Schema.Attribute.Float;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsLink extends Struct.ComponentSchema {
+  collectionName: 'components_elements_links';
+  info: {
+    displayName: 'Link';
+    description: '';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+    href: Schema.Attribute.String;
+    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ElementsButtonLink extends Struct.ComponentSchema {
+  collectionName: 'components_elements_button_links';
+  info: {
+    displayName: 'Button Link';
+    description: '';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY']>;
+    href: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'elements.video-clip': ElementsVideoClip;
-      'elements.link': ElementsLink;
-      'elements.button-link': ElementsButtonLink;
       'layout.video': LayoutVideo;
       'layout.top-nav': LayoutTopNav;
       'layout.post-list': LayoutPostList;
       'layout.hero': LayoutHero;
       'layout.code': LayoutCode;
+      'elements.video-clip': ElementsVideoClip;
+      'elements.link': ElementsLink;
+      'elements.button-link': ElementsButtonLink;
     }
   }
 }

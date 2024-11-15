@@ -308,6 +308,43 @@ export interface PluginReviewWorkflowsWorkflowStage
   };
 }
 
+export interface PluginYtTranscriptTranscript
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'transcript';
+  info: {
+    singularName: 'transcript';
+    pluralName: 'transcripts';
+    displayName: 'Transcript';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    videoId: Schema.Attribute.String;
+    thumbnailUrl: Schema.Attribute.String;
+    fullTranscript: Schema.Attribute.RichText;
+    transcriptWithTimeCodes: Schema.Attribute.JSON;
+    readableTranscript: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Struct.CollectionTypeSchema {
   collectionName: 'up_permissions';
@@ -1046,6 +1083,7 @@ declare module '@strapi/strapi' {
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
+      'plugin::yt-transcript.transcript': PluginYtTranscriptTranscript;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;

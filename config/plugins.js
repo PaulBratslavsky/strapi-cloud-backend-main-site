@@ -20,11 +20,21 @@ module.exports = ({ env }) => ({
   },
   "ai-utils": {
     config: {
-      openAIApiKey: process.env.OPENAI_API_KEY,
+      openAIApiKey: env('OPENAI_API_KEY'),
     },
   },
   'utilai': {
       enabled: true,
+  },
+'yt-transcript': {
+    enabled: true,
+    // resolve: './src/plugins/yt-transcript',
+    config: {
+      openAIApiKey: env('OPENAI_API_KEY'),
+      model: env('OPEN_AI_MODEL'),
+      temp: env('OPEN_AI_TEMPERATURE'),
+      maxTokens: env('OPEN_AI_MAX_TOKENS'),
+    },
   },
   "get-strapi-schema": {
     enabled: true,
