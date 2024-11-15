@@ -24,7 +24,7 @@ module.exports = ({ env }) => ({
       openAIApiKey: process.env.OPENAI_API_KEY,
     },
   },
-  'yt-transcript': {
+'yt-transcript': {
     enabled: true,
     // resolve: './src/plugins/yt-transcript',
     config: {
