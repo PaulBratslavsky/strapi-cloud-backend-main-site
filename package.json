@@ -24,7 +24,8 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0",
-    "utilai": "^0.0.4"
+    "utilai": "^0.0.4",
+    "yt-transcript-strapi-plugin": "0.0.7"
   },
   "devDependencies": {},
   "engines": {
