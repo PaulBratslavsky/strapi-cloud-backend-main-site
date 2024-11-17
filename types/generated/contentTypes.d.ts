@@ -644,6 +644,41 @@ export interface ApiSongSong extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVideoSummaryVideoSummary
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'video_summaries';
+  info: {
+    description: '';
+    displayName: 'Video Summary';
+    pluralName: 'video-summaries';
+    singularName: 'video-summary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fullTranscript: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::video-summary.video-summary'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    summary: Schema.Attribute.RichText;
+    thumbnailUrl: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    transcriptWithTimeCodes: Schema.Attribute.JSON;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoId: Schema.Attribute.String;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1204,6 +1239,7 @@ declare module '@strapi/strapi' {
       'api::post.post': ApiPostPost;
       'api::site.site': ApiSiteSite;
       'api::song.song': ApiSongSong;
+      'api::video-summary.video-summary': ApiVideoSummaryVideoSummary;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
