@@ -26,7 +26,7 @@ module.exports = ({ env }) => ({
   utilai: {
     enabled: true,
   },
-  "yt-transcript": {
+  "yt-transcript-strapi-plugin": {
     enabled: true,
     config: {
       openAIApiKey: env("OPENAI_API_KEY"),
