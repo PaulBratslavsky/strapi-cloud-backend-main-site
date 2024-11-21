@@ -10833,10 +10833,10 @@ youtubei.js@^11.0.1:
     tslib "^2.5.0"
     undici "^5.19.1"
 
-yt-transcript-strapi-plugin@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.10.tgz#4fe822030f8e4b1447a412ba84536c6fe6cdaa1b"
-  integrity sha512-1Un/pBQFruAdJW4rFqYc/ehvh5NXBSUE/wx2UFvmYtUfMYIrEU3ZO8UxJ3BLYJQEWbEPC+aYXKrv/sJUgvrRQg==
+yt-transcript-strapi-plugin@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.11.tgz#c29a2c763097c230fdd672ec37f080d02d2bff59"
+  integrity sha512-QedZ8dsnKdb/YgXnBFtAnKR41ypBtQOUJHqiDk2bcLI783iesgmisIb+SpfYK4fvqoQgWishB1xSsq87njOteg==
   dependencies:
     "@langchain/core" "^0.3.18"
     "@langchain/openai" "^0.3.14"
