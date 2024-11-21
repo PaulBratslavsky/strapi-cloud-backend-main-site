@@ -1178,7 +1178,7 @@ export interface PluginUsersPermissionsUser
   };
 }
 
-export interface PluginYtTranscriptTranscript
+export interface PluginYtTranscriptStrapiPluginTranscript
   extends Struct.CollectionTypeSchema {
   collectionName: 'transcript';
   info: {
@@ -1205,7 +1205,7 @@ export interface PluginYtTranscriptTranscript
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'plugin::yt-transcript.transcript'
+      'plugin::yt-transcript-strapi-plugin.transcript'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1250,7 +1250,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::yt-transcript.transcript': PluginYtTranscriptTranscript;
+      'plugin::yt-transcript-strapi-plugin.transcript': PluginYtTranscriptStrapiPluginTranscript;
     }
   }
 }
