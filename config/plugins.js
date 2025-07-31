@@ -35,7 +35,4 @@ module.exports = ({ env }) => ({
       maxTokens: env("OPEN_AI_MAX_TOKENS", 1000),
     },
   },
-  "get-strapi-schema": {
-    enabled: true,
-  },
 });

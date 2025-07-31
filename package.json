@@ -14,10 +14,9 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-users-permissions": "5.4.0",
-    "@strapi/strapi": "5.4.0",
-    "better-sqlite3": "8.6.0",
-    "get-strapi-schema": "^0.0.3",
+    "@strapi/plugin-users-permissions": "5.20.0",
+    "@strapi/strapi": "5.20.0",
+    "better-sqlite3": "11.3.0",
     "pg": "^8.11.3",
     "pg-connection-string": "^2.6.2",
     "react": "^18.0.0",
@@ -29,7 +28,7 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
+    "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
   "strapi": {

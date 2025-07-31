@@ -34,6 +34,10 @@ export interface AdminApiToken extends Struct.CollectionTypeSchema {
         minLength: 1;
       }> &
       Schema.Attribute.DefaultTo<''>;
+    encryptedKey: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
     expiresAt: Schema.Attribute.DateTime;
     lastUsedAt: Schema.Attribute.DateTime;
     lifespan: Schema.Attribute.BigInteger;
@@ -1194,7 +1198,7 @@ export interface PluginYtTranscriptStrapiPluginTranscript
       visible: true;
     };
     'content-type-builder': {
-      visible: false;
+      visible: true;
     };
   };
   attributes: {
@@ -1210,7 +1214,6 @@ export interface PluginYtTranscriptStrapiPluginTranscript
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     readableTranscript: Schema.Attribute.RichText;
-    thumbnailUrl: Schema.Attribute.String;
     title: Schema.Attribute.String;
     transcriptWithTimeCodes: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
