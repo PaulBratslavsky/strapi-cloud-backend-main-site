@@ -569,6 +569,61 @@ export interface PluginI18NLocale extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface PluginOctalensMentionsMention
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mention';
+  info: {
+    displayName: 'Mention';
+    pluralName: 'mentions';
+    singularName: 'mention';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: true;
+    };
+  };
+  attributes: {
+    action: Schema.Attribute.String;
+    author: Schema.Attribute.String;
+    authorProfileLink: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
+    bookmarked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imageUrl: Schema.Attribute.String;
+    keyword: Schema.Attribute.String;
+    language: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::octalens-mentions.mention'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    relevanceComment: Schema.Attribute.Text;
+    relevanceScore: Schema.Attribute.String;
+    sentimentLabel: Schema.Attribute.String;
+    source: Schema.Attribute.String;
+    sourceId: Schema.Attribute.String;
+    subreddit: Schema.Attribute.String;
+    timestamp: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+    viewId: Schema.Attribute.String;
+    viewName: Schema.Attribute.String;
+  };
+}
+
 export interface PluginReviewWorkflowsWorkflow
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_workflows';
@@ -984,6 +1039,7 @@ declare module '@strapi/strapi' {
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
+      'plugin::octalens-mentions.mention': PluginOctalensMentionsMention;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
       'plugin::upload.file': PluginUploadFile;
