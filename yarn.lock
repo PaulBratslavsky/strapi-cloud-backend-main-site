@@ -8127,10 +8127,10 @@ oblivious-set@1.0.0:
   resolved "https://registry.yarnpkg.com/oblivious-set/-/oblivious-set-1.0.0.tgz#c8316f2c2fb6ff7b11b6158db3234c49f733c566"
   integrity sha512-z+pI07qxo4c2CulUHCDf9lcqDlMSo72N/4rLUpRXf6fu+q8vjt8y0xS+Tlf8NTJDdTXHbdeO1n3MlbctwEoXZw==
 
-octalens-mentions@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/octalens-mentions/-/octalens-mentions-0.0.1.tgz#76c5d7c03986f2ae47783c35d1615315bebeb65a"
-  integrity sha512-pDQwgDomeHRa7UGYG8zXV32U4ahX3Ti1D4Iu0+ScpZe+MeH6/4Wu/MhlYeetCZnxXT4bOKJT8ZydEaNdabtbuA==
+octalens-mentions@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/octalens-mentions/-/octalens-mentions-0.0.2.tgz#f3410d944d3ab1489b919ea967fbd3fabf9645b0"
+  integrity sha512-98wxezsIDjs6SPZHkIapGVZdU73TF3MfjJGbXj7vXTCezE+5dRKJd79RhkK1zR333tRLl8VR/UERhEYXMGM9Ng==
   dependencies:
     "@strapi/design-system" "^2.0.0-rc.30"
     "@strapi/icons" "^2.0.0-rc.30"
