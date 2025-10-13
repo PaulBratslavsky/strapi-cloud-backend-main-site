@@ -619,7 +619,7 @@ export interface PluginOctalensMentionsMention
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
-    viewId: Schema.Attribute.String;
+    viewId: Schema.Attribute.Integer;
     viewName: Schema.Attribute.String;
   };
 }
