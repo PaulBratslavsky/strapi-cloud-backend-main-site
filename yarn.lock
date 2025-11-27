@@ -9369,7 +9369,7 @@ react-intl@^6.8.7:
     intl-messageformat "10.7.7"
     tslib "2"
 
-react-intl@^7.1.13:
+react-intl@^7.1.13, react-intl@^7.1.14:
   version "7.1.14"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-7.1.14.tgz#5500f76b0bb35694a7bec418b1adf1533dad6752"
   integrity sha512-VE/0Wi/lHJlBC7APQpCzLUdIt3GB5B0GZrRW8Q+ACbkHI4j+Wwgg9J1TniN6zmLHmPH5gxXcMy+fkSPfw5p1WQ==
@@ -10355,6 +10355,15 @@ stdin-discarder@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/stdin-discarder/-/stdin-discarder-0.2.2.tgz#390037f44c4ae1a1ae535c5fe38dc3aba8d997be"
   integrity sha512-UhDfHmA92YAlNnCfhmq0VeNL5bDbiZGg7sZ2IvPsXubGkiNa9EC+tUTsjBRsYUAz87btI6/1wf4XoVvQ3uRnmQ==
+
+strapi-plugin-lms@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-lms/-/strapi-plugin-lms-0.0.2.tgz#785d2ff5f20f948c6a5fafa734c54621b13e40a1"
+  integrity sha512-Vf894HZ9kZ4zs+XtjNLgZck84gWcgewjFvCE/BRS7xIzlJfGVjLV3fGChUjPvrkDTz66bJX/AxVzhzoIvKOLSQ==
+  dependencies:
+    "@strapi/design-system" "^2.0.0-rc.30"
+    "@strapi/icons" "^2.0.0-rc.30"
+    react-intl "^7.1.14"
 
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"
