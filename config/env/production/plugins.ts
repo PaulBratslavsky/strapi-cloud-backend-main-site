@@ -13,4 +13,7 @@ export default ({ env }) => ({
       maxTokens: env("OPEN_AI_MAX_TOKENS", 1000),
     },
   },
+  "strapi-plugin-lms": {
+    enabled: true
+  }
 });
