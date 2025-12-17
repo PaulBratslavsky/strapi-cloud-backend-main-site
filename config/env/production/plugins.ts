@@ -15,5 +15,11 @@ export default ({ env }) => ({
   },
   "strapi-plugin-lms": {
     enabled: true
-  }
+  },
+  "strapi-content-mcp": {
+    enabled: true,
+    config: {
+      logLevel: "debug",
+    },
+  },
 });
