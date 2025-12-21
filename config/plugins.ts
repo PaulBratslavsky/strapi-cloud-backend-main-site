@@ -11,6 +11,7 @@ export default ({ env }) => ({
       model: env("OPEN_AI_MODEL", "gpt-4o-mini"),
       temp: env("OPEN_AI_TEMPERATURE", 0.7),
       maxTokens: env("OPEN_AI_MAX_TOKENS", 1000),
+      proxyUrl: env("PROXY_URL"),
     },
   },
   "strapi-plugin-lms": {
