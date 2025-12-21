@@ -8268,6 +8268,11 @@ merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
+meriyah@^6.1.4:
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/meriyah/-/meriyah-6.1.4.tgz#2d49a8934fbcd9205c20564579c3560d9b1e077b"
+  integrity sha512-Sz8FzjzI0kN13GK/6MVEsVzMZEPvOhnmmI1lU5+/1cGOiK3QUahntrNNtdVeihrO7t9JpoH75iMNXg6R6uWflQ==
+
 methods@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
@@ -8925,14 +8930,16 @@ oblivious-set@1.0.0:
   resolved "https://registry.yarnpkg.com/oblivious-set/-/oblivious-set-1.0.0.tgz#c8316f2c2fb6ff7b11b6158db3234c49f733c566"
   integrity sha512-z+pI07qxo4c2CulUHCDf9lcqDlMSo72N/4rLUpRXf6fu+q8vjt8y0xS+Tlf8NTJDdTXHbdeO1n3MlbctwEoXZw==
 
-octalens-mentions@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/octalens-mentions/-/octalens-mentions-0.0.14.tgz#53dd530d765a45b1306f339acd89012b3394a93c"
-  integrity sha512-SqP5ux0V0+3u4qq2ZIeNG9Q5PIiyXcwqOWZS87WqvgtjE5PsweqrTb2q/+4Vu1BPEcmumfCXaakC797rDMv5SA==
+octalens-mentions@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/octalens-mentions/-/octalens-mentions-0.1.0.tgz#d6def7432244c311f06917c7047899ca63df95a4"
+  integrity sha512-FgXWldYod56nkjoC41MczmMnagLTIYEinMWgJjzQXwL+Te8H+dB6XRYY6+iI+lm9BneXkg6Cznd/7SC6M0YCCQ==
   dependencies:
+    "@modelcontextprotocol/sdk" "^1.12.0"
     "@strapi/design-system" "^2.0.0-rc.30"
     "@strapi/icons" "^2.0.0-rc.30"
     react-intl "^7.1.13"
+    zod "^4.0.0"
 
 on-finished@^2.3.0, on-finished@^2.4.1:
   version "2.4.1"
@@ -11417,6 +11424,11 @@ undici@^5.19.1:
   dependencies:
     "@fastify/busboy" "^2.0.0"
 
+undici@^6.21.0:
+  version "6.22.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-6.22.0.tgz#281adbc157af41da8e75393c9d75a1b788811bc3"
+  integrity sha512-hU/10obOIu62MGYjdskASR3CUAiYaFTtC9Pa6vHyf//mAipSvSQg6od2CnJswq7fvzNS3zJhxoRkgNVaHurWKw==
+
 unified@^11.0.0:
   version "11.0.5"
   resolved "https://registry.yarnpkg.com/unified/-/unified-11.0.5.tgz#f66677610a5c0a9ee90cab2b8d4d66037026d9e1"
@@ -12025,10 +12037,18 @@ youtubei.js@^10.4.0:
     tslib "^2.5.0"
     undici "^5.19.1"
 
-yt-transcript-strapi-plugin@0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.16.tgz#4470f78d3747cc924fa3e0160274dd1ca778cca0"
-  integrity sha512-4mxhhoNodgOOXTqekN+lV1PuZ1/+9I+InBH+WkBV7RxpV7QYlAsV5HML09vDa58iUvpvotUy1G7FBPiYJD+OMg==
+youtubei.js@^16.0.1:
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-16.0.1.tgz#b1fb7d42f36e4d355ba3ca2c93605a0572fe0c9b"
+  integrity sha512-3802bCAGkBc2/G5WUTc0l/bO5mPYJbQAHL04d9hE9PnrDHoBUT8MN721Yqt4RCNncAXdHcfee9VdJy3Fhq1r5g==
+  dependencies:
+    "@bufbuild/protobuf" "^2.0.0"
+    meriyah "^6.1.4"
+
+yt-transcript-strapi-plugin@0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.18.tgz#81eecc2e7c7682af7bf5e70fc8027fcf527cc556"
+  integrity sha512-51VfPv3z0GS+u2VrhNpPsuUmVYCKdtAhqvhdjGLaL+JDn39Mnlj9cr75LuQWmMeKXjy4n08+QpXUNRn+05to0A==
   dependencies:
     "@langchain/core" "^0.3.18"
     "@langchain/openai" "^0.3.14"
@@ -12038,6 +12058,8 @@ yt-transcript-strapi-plugin@0.0.16:
     "@strapi/icons" "^2.0.0-rc.12"
     langchain "^0.3.5"
     react-intl "^6.8.7"
+    undici "^6.21.0"
+    youtubei.js "^16.0.1"
     zod "^3.23.0"
 
 yup@0.32.9:
