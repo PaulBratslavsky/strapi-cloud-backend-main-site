@@ -7304,13 +7304,6 @@ jintr@^2.1.1:
   dependencies:
     acorn "^8.8.0"
 
-jintr@^3.0.2:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jintr/-/jintr-3.3.1.tgz#b88355af0c66603130b12d54721b8ab1d3be0b98"
-  integrity sha512-nnOzyhf0SLpbWuZ270Omwbj5LcXUkTcZkVnK8/veJXtSZOiATM5gMZMdmzN75FmTyj+NVgrGaPdH12zIJ24oIA==
-  dependencies:
-    acorn "^8.8.0"
-
 jju@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/jju/-/jju-1.4.0.tgz#a3abe2718af241a2b2904f84a625970f389ae32a"
@@ -12032,29 +12025,20 @@ youtubei.js@^10.4.0:
     tslib "^2.5.0"
     undici "^5.19.1"
 
-youtubei.js@^11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-11.0.1.tgz#5729bbf2df8dff58c3555140d23ae83c458f0b34"
-  integrity sha512-ZsbOd+5XF2Ofi3FrLMfYd+f9g9H8xswlouFhjhOqbwT68dMJtX6CRGsHNj5VTFCR/+L/865x1lnUlllB2dDDTA==
-  dependencies:
-    "@bufbuild/protobuf" "^2.0.0"
-    jintr "^3.0.2"
-    tslib "^2.5.0"
-    undici "^5.19.1"
-
-yt-transcript-strapi-plugin@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.14.tgz#0439dc81563be4cd4d2d5e7fd0e8272216aa8e5d"
-  integrity sha512-OAlaiHRiwZbX8HVKBXcf+aV5XFcAMX0UXM++sYwq/jZi+MJ/CCRPjLtg5I4js6zBVovYIUleURwQPEQeFNr7bQ==
+yt-transcript-strapi-plugin@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.15.tgz#669671a012b28ada4e0d339fee8c3e0f0fa1b606"
+  integrity sha512-Qz8/GO6sT/Y35P0OkAxASI74YYLCjryuEuHRgPaV1yHSKAQieouuq46+dFF4RSEhERHDp2qERMaoLffGKGc06g==
   dependencies:
     "@langchain/core" "^0.3.18"
     "@langchain/openai" "^0.3.14"
     "@langchain/textsplitters" "^0.1.0"
+    "@modelcontextprotocol/sdk" "^1.12.0"
     "@strapi/design-system" "^2.0.0-rc.12"
     "@strapi/icons" "^2.0.0-rc.12"
     langchain "^0.3.5"
     react-intl "^6.8.7"
-    youtubei.js "^11.0.1"
+    zod "^3.23.0"
 
 yup@0.32.9:
   version "0.32.9"
@@ -12084,7 +12068,7 @@ zod@3.25.67:
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.67.tgz#62987e4078e2ab0f63b491ef0c4f33df24236da8"
   integrity sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==
 
-zod@^3.19.1, zod@^3.22.4, zod@^3.25.32:
+zod@^3.19.1, zod@^3.22.4, zod@^3.23.0, zod@^3.25.32:
   version "3.25.76"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.76.tgz#26841c3f6fd22a6a2760e7ccb719179768471e34"
   integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==
