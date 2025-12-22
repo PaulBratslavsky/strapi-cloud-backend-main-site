@@ -12045,10 +12045,10 @@ youtubei.js@^16.0.1:
     "@bufbuild/protobuf" "^2.0.0"
     meriyah "^6.1.4"
 
-yt-transcript-strapi-plugin@0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.18.tgz#81eecc2e7c7682af7bf5e70fc8027fcf527cc556"
-  integrity sha512-51VfPv3z0GS+u2VrhNpPsuUmVYCKdtAhqvhdjGLaL+JDn39Mnlj9cr75LuQWmMeKXjy4n08+QpXUNRn+05to0A==
+yt-transcript-strapi-plugin@0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.20.tgz#12c01d610bb68ace827b4c5b302f2172e9eba11e"
+  integrity sha512-XJRjM5n+UZUTz137YxXueJ+AKCCemqVhYAkDvqtuYhZpg3BXbcW855tT9NKzWuIOIHNCkfS/QKdKBc4z0fGmIA==
   dependencies:
     "@langchain/core" "^0.3.18"
     "@langchain/openai" "^0.3.14"
