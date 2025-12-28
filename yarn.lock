@@ -11755,10 +11755,10 @@ youtubei.js@^16.0.1:
     "@bufbuild/protobuf" "^2.0.0"
     meriyah "^6.1.4"
 
-yt-transcript-strapi-plugin@0.0.22:
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.22.tgz#695150aea78d46b252262b7489b4e367f01e15c3"
-  integrity sha512-QeVVodqhsPcSoBlMDfmc1UD5TqtL48WwBC4fz1LBdKtJhsTosN/VjPFRJalIGRupCXrErqYAEwjDGqozjROHwg==
+yt-transcript-strapi-plugin@0.0.25:
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/yt-transcript-strapi-plugin/-/yt-transcript-strapi-plugin-0.0.25.tgz#baf7ecbfb352a69a58c8ec6da09e9c3c76513ad5"
+  integrity sha512-+PFKLIXIlm6EcS1pLbzTr3Heu36Q+SLFpHq/XHb7IVRixvBqlDx2jdG+mUaVF76gCy+PV7O1KD7zdm8RJGfuSg==
   dependencies:
     "@modelcontextprotocol/sdk" "^1.12.0"
     "@strapi/design-system" "^2.0.0-rc.12"
