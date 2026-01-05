@@ -27,7 +27,7 @@
     "strapi-plugin-lms": "0.0.2",
     "styled-components": "^6.0.0",
     "utilai": "^0.0.4",
-    "strapi-oauth-mcp-manager": "0.1.4",
+    "strapi-oauth-mcp-manager": "0.1.5",
     "yt-transcript-strapi-plugin": "0.1.4"
   },
   "devDependencies": {
