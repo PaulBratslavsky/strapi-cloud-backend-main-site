@@ -1,4 +1,7 @@
 export default ({ env }) => ({
+  "strapi-oauth-mcp-manager": {
+    enabled: true,
+  },
   "ai-utils": {
     config: {
       openAIApiKey: process.env.OPENAI_API_KEY,
