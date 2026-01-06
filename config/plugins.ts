@@ -26,4 +26,12 @@ export default ({ env }) => ({
       logLevel: "debug",
     },
   },
+  "strapi-content-embeddings": {
+    enabled: true,
+    config: {
+      openAIApiKey: env("OPENAI_API_KEY"),
+      neonConnectionString: env("NEON_CONNECTION_STRING"),
+      embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
+    },
+  },
 });
