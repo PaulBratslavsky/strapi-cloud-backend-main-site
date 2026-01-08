@@ -32,6 +32,10 @@ export default ({ env }) => ({
       openAIApiKey: env("OPENAI_API_KEY"),
       neonConnectionString: env("NEON_CONNECTION_STRING"),
       embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
+      // Chunking options for large content
+      chunkSize: 4000,      // Max characters per chunk (~1000 tokens)
+      chunkOverlap: 200,    // Overlap between chunks for context
+      autoChunk: true,      // Auto-chunk content over chunkSize
     },
   },
 });
