@@ -15804,7 +15804,7 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-content-embeddings: "npm:0.1.5"
+    strapi-content-embeddings: "npm:0.1.6"
     strapi-content-mcp: "npm:0.1.6"
     strapi-oauth-mcp-manager: "npm:0.1.5"
     strapi-plugin-lms: "npm:0.0.2"
@@ -18241,9 +18241,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-content-embeddings@npm:0.1.5":
-  version: 0.1.5
-  resolution: "strapi-content-embeddings@npm:0.1.5"
+"strapi-content-embeddings@npm:0.1.6":
+  version: 0.1.6
+  resolution: "strapi-content-embeddings@npm:0.1.6"
   dependencies:
     "@langchain/community": "npm:^1.1.2"
     "@langchain/core": "npm:1.1.9"
@@ -18265,7 +18265,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.27.0
     styled-components: ^6.1.13
-  checksum: 10c0/01e0e5d232755db0f0a4e333c9739275af3dea4be7320063731d1fad985fceff30df399fd63dfab8f6ad53b4f029de9e3246551aa643efbfff648ead3b905799
+  checksum: 10c0/63f021832adc9a8f1af803969e609ff2cf3a7fe5cde860d8beaccfab6aea177ee02237958975924a529bef72db3774234a57f7d3837c4d445a2fa64a823b7b87
   languageName: node
   linkType: hard
 
