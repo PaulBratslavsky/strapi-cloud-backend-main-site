@@ -15237,9 +15237,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"octalens-mentions@npm:0.1.2":
-  version: 0.1.2
-  resolution: "octalens-mentions@npm:0.1.2"
+"octalens-mentions@npm:0.2.0":
+  version: 0.2.0
+  resolution: "octalens-mentions@npm:0.2.0"
   dependencies:
     "@modelcontextprotocol/sdk": "npm:^1.12.0"
     "@strapi/design-system": "npm:^2.0.0-rc.30"
@@ -15253,7 +15253,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.1
     styled-components: ^6.1.19
-  checksum: 10c0/bf7ff16dc38c75077506020142aeffd145b5e2035a04379531ed21eca0507c31ea492150268376a5fd948ae0ab1dd7701cc4d0427c0fcc100a6449207958fccb
+  checksum: 10c0/923df77d6b5949dd8f69b10035fd6da87af3d525412471df3904c36f40d2a248520ad42d9b01cb38f88d7bb55ca8b0e8a9067df2fe3ff258b375cbc45744f11a
   languageName: node
   linkType: hard
 
@@ -15800,7 +15800,7 @@ __metadata:
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
     better-sqlite3: "npm:11.3.0"
-    octalens-mentions: "npm:0.1.2"
+    octalens-mentions: "npm:0.2.0"
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
