@@ -29,11 +29,15 @@ export default ({ env }) => ({
   "strapi-builder-ai-mcp": {
     enabled: true,
     config: {
-      strapiUrl: env("https://deserving-harmony-9f5ca04daf.strapiapp.com"),
-      mediaUrl: env("https://deserving-harmony-9f5ca04daf.media.strapiapp.com"),
-      publicEndpoints: true,
+      strapiUrl: env(
+        "STRAPI_URL",
+        "https://deserving-harmony-9f5ca04daf.strapiapp.com"
+      ),
+      mediaUrl: env(
+        "MEDIA_URL",
+        "https://deserving-harmony-9f5ca04daf.media.strapiapp.com"
+      ),
       apiPrefix: "/api",
     },
   },
 });
-
