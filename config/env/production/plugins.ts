@@ -26,7 +26,14 @@ export default ({ env }) => ({
       embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
     },
   },
-    "strapi-builder-ai-mcp": {
+  "strapi-builder-ai-mcp": {
     enabled: true,
+    config: {
+      strapiUrl: env("https://deserving-harmony-9f5ca04daf.strapiapp.com"),
+      mediaUrl: env("https://deserving-harmony-9f5ca04daf.media.strapiapp.com"),
+      publicEndpoints: true,
+      apiPrefix: "/api",
+    },
   },
 });
+
