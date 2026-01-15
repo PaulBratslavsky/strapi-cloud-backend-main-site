@@ -15926,7 +15926,7 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-builder-ai-mcp: "npm:0.0.0"
+    strapi-builder-ai-mcp: "npm:0.0.1"
     strapi-content-embeddings: "npm:0.2.0"
     strapi-content-mcp: "npm:0.1.6"
     strapi-oauth-mcp-manager: "npm:0.1.5"
@@ -18409,9 +18409,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-builder-ai-mcp@npm:0.0.0":
-  version: 0.0.0
-  resolution: "strapi-builder-ai-mcp@npm:0.0.0"
+"strapi-builder-ai-mcp@npm:0.0.1":
+  version: 0.0.1
+  resolution: "strapi-builder-ai-mcp@npm:0.0.1"
   dependencies:
     "@modelcontextprotocol/sdk": "npm:^1.12.0"
     "@strapi/design-system": "npm:^2.0.0-rc.30"
@@ -18425,7 +18425,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.6
-  checksum: 10c0/be64a4356991fd523773e700b442a039fad979b857302cba40dc0a5ab9bfcea7517c9db639d6f6290341fb490c5a5992ec0b013f2e309e667e2ad1b1e3cf885c
+  checksum: 10c0/5498f6298bac8e1fc27f120ae0fccf2c3671904249f8b02598d135cc0d736d7dadb30342fdfa909fe30105485a280210f984980ad6bac6372fb0b6fe81f4c160
   languageName: node
   linkType: hard
 
