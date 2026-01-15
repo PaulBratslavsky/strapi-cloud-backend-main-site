@@ -26,4 +26,7 @@ export default ({ env }) => ({
       embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
     },
   },
+    "strapi-builder-ai-mcp": {
+    enabled: true,
+  },
 });
