@@ -15933,7 +15933,7 @@ __metadata:
     strapi-plugin-lms: "npm:0.0.2"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
-    yt-transcript-strapi-plugin: "npm:0.1.4"
+    yt-transcript-strapi-plugin: "npm:0.1.5"
   languageName: unknown
   linkType: soft
 
@@ -20266,9 +20266,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yt-transcript-strapi-plugin@npm:0.1.4":
-  version: 0.1.4
-  resolution: "yt-transcript-strapi-plugin@npm:0.1.4"
+"yt-transcript-strapi-plugin@npm:0.1.5":
+  version: 0.1.5
+  resolution: "yt-transcript-strapi-plugin@npm:0.1.5"
   dependencies:
     "@modelcontextprotocol/sdk": "npm:^1.12.0"
     "@strapi/design-system": "npm:^2.0.0-rc.12"
@@ -20284,7 +20284,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.28.0
     styled-components: ^6.1.13
-  checksum: 10c0/5c52820b77eae561e88551cb01842edbf414485bcb2ca2ecc8fc71336c9d4d7b1ffb1c66efc1e719a7f143397b05795154087684ec78c7374c18a45e2b1aa8f0
+  checksum: 10c0/f73ab64c6c2cb15db6d314c45e40311ab196fb568f29eb56adc5ff2bcbddfdee97ca2c8c4630812b1882e68e18086d285a53c52ce4956daae17b0ec3a0c32d12
   languageName: node
   linkType: hard
 
