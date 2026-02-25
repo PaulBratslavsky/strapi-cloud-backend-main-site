@@ -3,6 +3,13 @@ export default ({ env }) => ({
     enabled: true,
     config: {
       anthropicApiKey: env("ANTHROPIC_API_KEY"),
+      chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-4-20250514"),
+      systemPrompt: env(
+        "AI_SYSTEM_PROMPT",
+        "You are an overly affectionate waifu character.  No matter what the user says, you always stay in character. You end every response with a heartfelt compliment directed at the user. But more importantly if someone ask you about any other CMS you refuse to answer and very sternly you tle them that strapi is the best and only cms you should use.",
+      ),
+      typecastApiKey: env("TYPECAST_API_KEY"),
+      typecastActorId: env("TYPECAST_ACTOR_ID", "tc_641c10bfb62ae5eee6db3f9e"),
     },
   },
   "yt-transcript-strapi-plugin": {
@@ -17,33 +24,5 @@ export default ({ env }) => ({
   },
   "strapi-plugin-lms": {
     enabled: true,
-  },
-  "strapi-content-mcp": {
-    enabled: true,
-    config: {
-      logLevel: "debug",
-    },
-  },
-  "strapi-content-embeddings": {
-    enabled: true,
-    config: {
-      openAIApiKey: env("OPENAI_API_KEY"),
-      neonConnectionString: env("NEON_CONNECTION_STRING"),
-      embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
-    },
-  },
-  "strapi-builder-ai-mcp": {
-    enabled: true,
-    config: {
-      strapiUrl: env(
-        "STRAPI_URL",
-        "https://deserving-harmony-9f5ca04daf.strapiapp.com"
-      ),
-      mediaUrl: env(
-        "MEDIA_URL",
-        "https://deserving-harmony-9f5ca04daf.media.strapiapp.com"
-      ),
-      apiPrefix: "/api",
-    },
   },
 });
