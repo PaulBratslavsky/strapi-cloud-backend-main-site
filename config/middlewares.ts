@@ -7,6 +7,8 @@ export default [
       contentSecurityPolicy: {
         directives: {
           'script-src': ["'self'", "'unsafe-inline'"],
+          'connect-src': ["'self'", 'blob:'],
+          'img-src': ["'self'", 'data:', 'blob:'],
           'frame-ancestors': [
             "'self'",
             'https://deserving-harmony-9f5ca04daf.strapiapp.com',
