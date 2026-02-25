@@ -1,4 +1,10 @@
 export default ({ env }) => ({
+  "ai-sdk": {
+    enabled: true,
+    config: {
+      anthropicApiKey: env("ANTHROPIC_API_KEY"),
+    },
+  },
   "yt-transcript-strapi-plugin": {
     enabled: true,
     config: {

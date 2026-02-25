@@ -708,6 +708,89 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface PluginAiSdkConversation extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_sdk_conversations';
+  info: {
+    displayName: 'AI Conversation';
+    pluralName: 'conversations';
+    singularName: 'conversation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    embedding: Schema.Attribute.Relation<'morphOne'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::ai-sdk.conversation'
+    > &
+      Schema.Attribute.Private;
+    messages: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'New conversation'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginAiSdkMemory extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_sdk_memories';
+  info: {
+    displayName: 'AI Memory';
+    pluralName: 'memories';
+    singularName: 'memory';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    category: Schema.Attribute.Enumeration<
+      ['general', 'preference', 'personal', 'project']
+    > &
+      Schema.Attribute.DefaultTo<'general'>;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    embedding: Schema.Attribute.Relation<'morphOne'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::ai-sdk.memory'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -903,6 +986,54 @@ export interface PluginOctalensMentionsMention
     url: Schema.Attribute.String;
     viewId: Schema.Attribute.Integer;
     viewName: Schema.Attribute.String;
+  };
+}
+
+export interface PluginOctalensMentionsResponse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'response';
+  info: {
+    displayName: 'Response';
+    pluralName: 'responses';
+    singularName: 'response';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    embedding: Schema.Attribute.Relation<'morphOne'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::octalens-mentions.response'
+    > &
+      Schema.Attribute.Private;
+    mention: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::octalens-mentions.mention'
+    >;
+    notes: Schema.Attribute.Text;
+    platform: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    respondedAt: Schema.Attribute.DateTime;
+    responseText: Schema.Attribute.Text & Schema.Attribute.Required;
+    responseUrl: Schema.Attribute.String;
+    status: Schema.Attribute.Enumeration<['draft', 'posted', 'failed']> &
+      Schema.Attribute.DefaultTo<'draft'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1673,10 +1804,13 @@ declare module '@strapi/strapi' {
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::page.page': ApiPagePage;
       'api::tag.tag': ApiTagTag;
+      'plugin::ai-sdk.conversation': PluginAiSdkConversation;
+      'plugin::ai-sdk.memory': PluginAiSdkMemory;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::octalens-mentions.mention': PluginOctalensMentionsMention;
+      'plugin::octalens-mentions.response': PluginOctalensMentionsResponse;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
       'plugin::strapi-content-embeddings.embedding': PluginStrapiContentEmbeddingsEmbedding;

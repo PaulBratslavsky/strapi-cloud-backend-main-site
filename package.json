@@ -27,6 +27,7 @@
     "strapi-content-embeddings": "0.2.0",
     "strapi-content-mcp": "0.1.6",
     "strapi-oauth-mcp-manager": "0.1.5",
+    "strapi-plugin-ai-sdk": "^0.2.0",
     "strapi-plugin-lms": "0.0.2",
     "styled-components": "^6.0.0",
     "yt-transcript-strapi-plugin": "0.1.5"
