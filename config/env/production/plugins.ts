@@ -12,7 +12,7 @@ export default ({ env }) => ({
       typecastActorId: env("TYPECAST_ACTOR_ID", "tc_641c10bfb62ae5eee6db3f9e"),
       publicChat: {
         chatModel: "claude-haiku-4-5-20251001",
-        allowedContentTypes: [],
+        allowedContentTypes: ["api::article.article"],
       },
     },
   },
