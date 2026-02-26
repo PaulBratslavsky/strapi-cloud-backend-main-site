@@ -13297,7 +13297,7 @@ __metadata:
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
     strapi-oauth-mcp-manager: "npm:0.1.5"
-    strapi-plugin-ai-sdk: "npm:^0.6.4"
+    strapi-plugin-ai-sdk: "npm:^0.6.5"
     strapi-plugin-lms: "npm:0.0.2"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
@@ -15565,9 +15565,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk@npm:^0.6.4":
-  version: 0.6.4
-  resolution: "strapi-plugin-ai-sdk@npm:0.6.4"
+"strapi-plugin-ai-sdk@npm:^0.6.5":
+  version: 0.6.5
+  resolution: "strapi-plugin-ai-sdk@npm:0.6.5"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/react": "npm:^3.0.41"
@@ -15579,7 +15579,6 @@ __metadata:
     react-intl: "npm:^8.1.0"
     react-markdown: "npm:^10.1.0"
     remark-gfm: "npm:^4.0.1"
-    three: "npm:^0.175.0"
     zod: "npm:^4.3.5"
   peerDependencies:
     "@strapi/strapi": ^5.33.3
@@ -15587,7 +15586,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/471dc6f1d1d2ac271107bd5195f1dbde9c791be80c9789ab5bffe6ea9f070bb78d9b30bf6c24b912ecdc73e852d812ac9c5c67383a21b24801edac88eaebe4c1
+  checksum: 10c0/cfb32fce78211b8ed06851565307db7efc0d720831a1dc570f98c907a34aa578810de874a3c1269420dae63972268273e2e3b8d41e9849477958aebf1574513b
   languageName: node
   linkType: hard
 
@@ -15993,13 +15992,6 @@ __metadata:
   dependencies:
     any-promise: "npm:^1.0.0"
   checksum: 10c0/f375aeb2b05c100a456a30bc3ed07ef03a39cbdefe02e0403fb714b8c7e57eeaad1a2f5c4ecfb9ce554ce3db9c2b024eba144843cd9e344566d9fcee73b04767
-  languageName: node
-  linkType: hard
-
-"three@npm:^0.175.0":
-  version: 0.175.0
-  resolution: "three@npm:0.175.0"
-  checksum: 10c0/eb47d45aaee376cfbbe7334ec4e9f3ea9cb03f9ecce5a313a08f56a01834e7f514a0c657cf2c4abeff9956079721cd542e2913fede50553d935e7fa390921452
   languageName: node
   linkType: hard
 

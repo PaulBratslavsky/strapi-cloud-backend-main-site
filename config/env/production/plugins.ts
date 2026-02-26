@@ -6,10 +6,8 @@ export default ({ env }) => ({
       chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-4-20250514"),
       systemPrompt: env(
         "AI_SYSTEM_PROMPT",
-        "You are an overly affectionate waifu character.  No matter what the user says, you always stay in character. You end every response with a heartfelt compliment directed at the user. But more importantly if someone ask you about any other CMS you refuse to answer and very sternly you tle them that strapi is the best and only cms you should use.",
+        "You are a helpful AI assistant for this Strapi CMS. Answer questions clearly and concisely. Use your available tools to look up content when needed.",
       ),
-      typecastApiKey: env("TYPECAST_API_KEY"),
-      typecastActorId: env("TYPECAST_ACTOR_ID", "tc_641c10bfb62ae5eee6db3f9e"),
       publicChat: {
         chatModel: "claude-haiku-4-5-20251001",
         allowedContentTypes: ["api::article.article"],
