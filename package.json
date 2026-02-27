@@ -24,7 +24,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "strapi-oauth-mcp-manager": "0.1.5",
-    "strapi-plugin-ai-sdk": "^0.6.6",
+    "strapi-plugin-ai-sdk": "^0.6.7",
     "strapi-plugin-lms": "0.0.2",
     "styled-components": "^6.0.0",
     "yt-transcript-strapi-plugin": "0.1.5"
