@@ -19,15 +19,15 @@
     "@strapi/plugin-users-permissions": "5.33.1",
     "@strapi/strapi": "5.33.1",
     "better-sqlite3": "11.3.0",
-    "octalens-mentions": "0.2.0",
+    "octalens-mentions": "^0.2.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "strapi-oauth-mcp-manager": "0.1.5",
-    "strapi-plugin-ai-sdk": "^0.6.10",
+    "strapi-plugin-ai-sdk": "^0.7.0",
     "strapi-plugin-lms": "0.0.2",
     "styled-components": "^6.0.0",
-    "yt-transcript-strapi-plugin": "0.1.5"
+    "yt-transcript-strapi-plugin": "^0.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
