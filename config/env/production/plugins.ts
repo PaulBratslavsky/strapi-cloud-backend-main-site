@@ -10,7 +10,7 @@ export default ({ env }) => ({
       ),
       publicChat: {
         chatModel: "claude-haiku-4-5-20251001",
-        allowedContentTypes: ["api::article.article"],
+        allowedContentTypes: [],
       },
     },
   },
@@ -22,6 +22,15 @@ export default ({ env }) => ({
       previewLength: 500, // Preview length in characters
       maxFullTranscriptLength: 50000, // Auto-load full transcript if under this (~12K tokens)
       searchSegmentSeconds: 30, // Segment size for BM25 search
+    },
+  },
+  "yt-embeddings-strapi-plugin": {
+    enabled: true,
+    resolve: "../plugins/yt-embeddings-strapi-plugin",
+    config: {
+      openAIApiKey: env("OPENAI_API_KEY"),
+      neonConnectionString: env("NEON_CONNECTION_STRING"),
+      embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
     },
   },
   "strapi-plugin-lms": {

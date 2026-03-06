@@ -24,6 +24,15 @@ export default ({ env }) => ({
       searchSegmentSeconds: 30, // Segment size for BM25 search
     },
   },
+  "yt-embeddings-strapi-plugin": {
+    enabled: true,
+    resolve: "../plugins/yt-embeddings-strapi-plugin",
+    config: {
+      openAIApiKey: env("OPENAI_API_KEY"),
+      neonConnectionString: env("NEON_CONNECTION_STRING"),
+      embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
+    },
+  },
   "strapi-plugin-lms": {
     enabled: true,
   },
