@@ -26,7 +26,6 @@ export default ({ env }) => ({
   },
   "yt-embeddings-strapi-plugin": {
     enabled: true,
-    resolve: "../plugins/yt-embeddings-strapi-plugin",
     config: {
       openAIApiKey: env("OPENAI_API_KEY"),
       neonConnectionString: env("NEON_CONNECTION_STRING"),
