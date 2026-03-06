@@ -16214,12 +16214,12 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-content-embeddings: "npm:^0.2.2"
     strapi-oauth-mcp-manager: "npm:0.1.5"
     strapi-plugin-ai-sdk: "npm:^0.7.0"
     strapi-plugin-lms: "npm:0.0.2"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
+    yt-embeddings-strapi-plugin: "npm:^0.0.1"
     yt-transcript-strapi-plugin: "npm:^0.2.0"
   languageName: unknown
   linkType: soft
@@ -18692,36 +18692,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-content-embeddings@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "strapi-content-embeddings@npm:0.2.2"
-  dependencies:
-    "@langchain/community": "npm:^1.1.2"
-    "@langchain/core": "npm:^1.1.31"
-    "@langchain/openai": "npm:^1.2.1"
-    "@mdxeditor/editor": "npm:^3.52.3"
-    "@modelcontextprotocol/sdk": "npm:^1.12.0"
-    "@strapi/design-system": "npm:^2.0.0-rc.12"
-    "@strapi/icons": "npm:^2.0.0-rc.12"
-    html-to-text: "npm:^9.0.5"
-    langchain: "npm:^1.2.4"
-    pg: "npm:^8.13.1"
-    qs: "npm:^6.13.1"
-    react-intl: "npm:^6.8.4"
-    react-markdown: "npm:^10.1.0"
-    remove-markdown: "npm:^0.5.5"
-    zod: "npm:^3.24.0"
-  peerDependencies:
-    "@strapi/sdk-plugin": ^5.2.7
-    "@strapi/strapi": ^5.2.0
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    react-router-dom: ^6.27.0
-    styled-components: ^6.1.13
-  checksum: 10c0/8547a763c134696cb05bc67b8e960ebe7510cdb224495ca9c742e5e3e61be0e64f5d67542c90e0e70ef625cfe0e7489394e9d093aec7fc89b93cbfc413a739e0
-  languageName: node
-  linkType: hard
-
 "strapi-oauth-mcp-manager@npm:0.1.5":
   version: 0.1.5
   resolution: "strapi-oauth-mcp-manager@npm:0.1.5"
@@ -20540,6 +20510,36 @@ __metadata:
     "@bufbuild/protobuf": "npm:^2.0.0"
     meriyah: "npm:^6.1.4"
   checksum: 10c0/46ef1c35075f33cf48a81b307636a8a5142a80f06068dc5bfac347705644da90556f6d2fdceeb91b1eec5401d17df89ffe471c46038b8f98f3eb02e1419b05a3
+  languageName: node
+  linkType: hard
+
+"yt-embeddings-strapi-plugin@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "yt-embeddings-strapi-plugin@npm:0.0.1"
+  dependencies:
+    "@langchain/community": "npm:^1.1.2"
+    "@langchain/core": "npm:^1.1.31"
+    "@langchain/openai": "npm:^1.2.1"
+    "@mdxeditor/editor": "npm:^3.52.3"
+    "@modelcontextprotocol/sdk": "npm:^1.12.0"
+    "@strapi/design-system": "npm:^2.0.0-rc.12"
+    "@strapi/icons": "npm:^2.0.0-rc.12"
+    html-to-text: "npm:^9.0.5"
+    langchain: "npm:^1.2.4"
+    pg: "npm:^8.13.1"
+    qs: "npm:^6.13.1"
+    react-intl: "npm:^6.8.4"
+    react-markdown: "npm:^10.1.0"
+    remove-markdown: "npm:^0.5.5"
+    zod: "npm:^3.24.0"
+  peerDependencies:
+    "@strapi/sdk-plugin": ^5.2.7
+    "@strapi/strapi": ^5.2.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
+    react-router-dom: ^6.27.0
+    styled-components: ^6.1.13
+  checksum: 10c0/cae15b05d18a5e1e907a8099ac7a7d805cceff843ca78f9b06062d833156e7132489fa946135a86f2ee159f008f46a5341546c9f0a70ad95a91150f8a863a086
   languageName: node
   linkType: hard
 
