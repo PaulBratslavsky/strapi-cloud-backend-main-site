@@ -27,7 +27,7 @@
     "strapi-plugin-ai-sdk": "^0.7.0",
     "strapi-plugin-lms": "0.0.2",
     "styled-components": "^6.0.0",
-    "yt-embeddings-strapi-plugin": "^0.0.1",
+    "yt-embeddings-strapi-plugin": "^0.1.1",
     "yt-transcript-strapi-plugin": "^0.2.0"
   },
   "devDependencies": {
