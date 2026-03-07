@@ -15625,6 +15625,7 @@ __metadata:
     react-router-dom: "npm:^6.0.0"
     strapi-oauth-mcp-manager: "npm:0.1.5"
     strapi-plugin-ai-sdk: "npm:0.7.7"
+    strapi-plugin-ai-sdk-transcripts: "npm:^1.0.1"
     strapi-plugin-lms: "npm:0.0.2"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
@@ -18116,6 +18117,28 @@ __metadata:
     react-router-dom: ^6.30.2
     styled-components: ^6.1.19
   checksum: 10c0/972c32b4e45c974aac5ffca2a0b4b8c2ca9322f4569392e55c7a0aba60d55955d649dd426a9a82391487de2f9b0364cf5eae73a2fc592242839132837e654209
+  languageName: node
+  linkType: hard
+
+"strapi-plugin-ai-sdk-transcripts@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "strapi-plugin-ai-sdk-transcripts@npm:1.0.1"
+  dependencies:
+    "@strapi/design-system": "npm:^2.0.0-rc.12"
+    "@strapi/icons": "npm:^2.0.0-rc.12"
+    react-intl: "npm:^6.8.7"
+    undici: "npm:^6.21.0"
+    youtubei.js: "npm:^16.0.1"
+    zod: "npm:^3.23.0"
+  peerDependencies:
+    "@strapi/sdk-plugin": ^5.3.2
+    "@strapi/strapi": ^5.33.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
+    react-router-dom: ^6.28.0
+    strapi-plugin-ai-sdk: ">=0.7.0"
+    styled-components: ^6.1.13
+  checksum: 10c0/8529bcb950578de8cb8f5710ebf32fe35c54fcf124e7b7704998b2f495a8dbc0588f4554262b6eb25a760f1d7cdd41b4ec8e804df266f79e23d37f60f0bbf84b
   languageName: node
   linkType: hard
 

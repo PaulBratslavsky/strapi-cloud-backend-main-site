@@ -14,7 +14,7 @@ export default ({ env }) => ({
       },
     },
   },
-  "yt-transcript-strapi-plugin": {
+  "ai-sdk-yt-transcripts": {
     enabled: true,
     config: {
       proxyUrl: env("PROXY_URL"),
