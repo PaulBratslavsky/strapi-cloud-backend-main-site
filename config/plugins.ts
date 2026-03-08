@@ -24,7 +24,7 @@ export default ({ env }) => ({
       searchSegmentSeconds: 30, // Segment size for BM25 search
     },
   },
-  "yt-embeddings-strapi-plugin": {
+  "ai-sdk-yt-embeddings": {
     enabled: true,
     config: {
       openAIApiKey: env("OPENAI_API_KEY"),

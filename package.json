@@ -23,13 +23,11 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "strapi-oauth-mcp-manager": "0.1.5",
     "strapi-plugin-ai-sdk": "0.7.7",
     "strapi-plugin-ai-sdk-transcripts": "^1.0.1",
+    "strapi-plugin-ai-sdk-yt-embeddings": "0.2.0",
     "strapi-plugin-lms": "0.0.2",
-    "styled-components": "^6.0.0",
-    "yt-embeddings-strapi-plugin": "^0.1.1",
-    "yt-transcript-strapi-plugin": "^0.2.0"
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
