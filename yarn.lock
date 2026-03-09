@@ -1955,18 +1955,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/ecma402-abstract@npm:3.0.7":
-  version: 3.0.7
-  resolution: "@formatjs/ecma402-abstract@npm:3.0.7"
-  dependencies:
-    "@formatjs/fast-memoize": "npm:3.0.2"
-    "@formatjs/intl-localematcher": "npm:0.7.4"
-    decimal.js: "npm:^10.4.3"
-    tslib: "npm:^2.8.0"
-  checksum: 10c0/0fdc25ef72dcd5bbe1deeb190be2f0a2e2770a2135904d16ddfb424305a1efed14b026fba6c48121bc32f693abf1fe08c0ee12cb7d888cb2ba92963236d82c77
-  languageName: node
-  linkType: hard
-
 "@formatjs/ecma402-abstract@npm:3.1.1":
   version: 3.1.1
   resolution: "@formatjs/ecma402-abstract@npm:3.1.1"
@@ -2003,15 +1991,6 @@ __metadata:
   dependencies:
     tslib: "npm:^2.8.0"
   checksum: 10c0/f5eabb0e4ab7162297df8252b4cfde194b23248120d9df267592eae2be2d2f7c4f670b5a70523d91b4ecdc35d40e65823bb8eeba8dd79fbf8601a972bf3b8866
-  languageName: node
-  linkType: hard
-
-"@formatjs/fast-memoize@npm:3.0.2":
-  version: 3.0.2
-  resolution: "@formatjs/fast-memoize@npm:3.0.2"
-  dependencies:
-    tslib: "npm:^2.8.0"
-  checksum: 10c0/f7d1074090df309d37322979fe5fc96451531317b42bd927102a3a86dee537b1cb0e378158c74e00efd9714a0aa0f1e5a673c749535df200e13167112676ce88
   languageName: node
   linkType: hard
 
@@ -2057,17 +2036,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/icu-messageformat-parser@npm:3.2.1":
-  version: 3.2.1
-  resolution: "@formatjs/icu-messageformat-parser@npm:3.2.1"
-  dependencies:
-    "@formatjs/ecma402-abstract": "npm:3.0.7"
-    "@formatjs/icu-skeleton-parser": "npm:2.0.7"
-    tslib: "npm:^2.8.0"
-  checksum: 10c0/e11057cbc04cd419d6f46e84420fe2c6b66d7b85ef2d05023a39cd9c7a93199cbfd5837825e2c3effb07ff2f4cf0ae1209c4830989c7462c133eeb8a98aaf096
-  languageName: node
-  linkType: hard
-
 "@formatjs/icu-messageformat-parser@npm:3.5.1":
   version: 3.5.1
   resolution: "@formatjs/icu-messageformat-parser@npm:3.5.1"
@@ -2106,16 +2074,6 @@ __metadata:
     "@formatjs/ecma402-abstract": "npm:2.2.4"
     tslib: "npm:2"
   checksum: 10c0/5ad78a5682e83b973e6fed4fca68660b944c41d1e941f0c84d69ff3d10ae835330062dc0a2cf0d237d2675ad3463405061a3963c14c2b9d8d1c1911f892b1a8d
-  languageName: node
-  linkType: hard
-
-"@formatjs/icu-skeleton-parser@npm:2.0.7":
-  version: 2.0.7
-  resolution: "@formatjs/icu-skeleton-parser@npm:2.0.7"
-  dependencies:
-    "@formatjs/ecma402-abstract": "npm:3.0.7"
-    tslib: "npm:^2.8.0"
-  checksum: 10c0/f6fba57778ada42cece824bcb1f372002bdd26f1ffac13344be46eaa5b75e0d85c150085cf356e14ab938758d56c0e303f4fd57ce6e33c9202f3d78cefe13020
   languageName: node
   linkType: hard
 
@@ -2200,16 +2158,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/intl-localematcher@npm:0.7.4":
-  version: 0.7.4
-  resolution: "@formatjs/intl-localematcher@npm:0.7.4"
-  dependencies:
-    "@formatjs/fast-memoize": "npm:3.0.2"
-    tslib: "npm:^2.8.0"
-  checksum: 10c0/7fc31e13397317faadee033dcf668cda49f031b28542c634c920339f374f483235543e08be2077152cfe5dd41e651d8d2d37b6ece8aa044c0998c48f5472fb1a
-  languageName: node
-  linkType: hard
-
 "@formatjs/intl-localematcher@npm:0.8.1":
   version: 0.8.1
   resolution: "@formatjs/intl-localematcher@npm:0.8.1"
@@ -2275,24 +2223,6 @@ __metadata:
     typescript:
       optional: true
   checksum: 10c0/b291e867bcde491737f70254ec30898e120f36784b5ee2911dcc271fbd744e90382f03232ac7f5a55d46071f4ffccfc84b63445734117b75ca1ced659f6b7827
-  languageName: node
-  linkType: hard
-
-"@formatjs/intl@npm:4.0.8":
-  version: 4.0.8
-  resolution: "@formatjs/intl@npm:4.0.8"
-  dependencies:
-    "@formatjs/ecma402-abstract": "npm:3.0.7"
-    "@formatjs/fast-memoize": "npm:3.0.2"
-    "@formatjs/icu-messageformat-parser": "npm:3.2.1"
-    intl-messageformat: "npm:11.0.8"
-    tslib: "npm:^2.8.0"
-  peerDependencies:
-    typescript: ^5.6.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 10c0/a4a6fd181d479c988d5569a74edcc6a3a0ad5072a627785caf342c1f3410b7dc901432a2b9f47e63168b9c073cc1e49aacc6b8c978b07438ba655d7c79783dbd
   languageName: node
   linkType: hard
 
@@ -12004,18 +11934,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"intl-messageformat@npm:11.0.8":
-  version: 11.0.8
-  resolution: "intl-messageformat@npm:11.0.8"
-  dependencies:
-    "@formatjs/ecma402-abstract": "npm:3.0.7"
-    "@formatjs/fast-memoize": "npm:3.0.2"
-    "@formatjs/icu-messageformat-parser": "npm:3.2.1"
-    tslib: "npm:^2.8.0"
-  checksum: 10c0/5bbc8a864d01a5a1f6925b09313e0a29e2c3ac4823e5e949314268222135e73f1964ebc21585e73e266e205a8a3e8ada8ad880a1718e692c33b094e460675870
-  languageName: node
-  linkType: hard
-
 "intl-messageformat@npm:11.1.2":
   version: 11.1.2
   resolution: "intl-messageformat@npm:11.1.2"
@@ -15623,15 +15541,12 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-oauth-mcp-manager: "npm:0.1.5"
     strapi-plugin-ai-sdk: "npm:0.7.7"
-    strapi-plugin-ai-sdk-transcripts: "npm:^1.0.1"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.2.0"
+    strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.2"
     strapi-plugin-lms: "npm:0.0.2"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
-    yt-embeddings-strapi-plugin: "npm:^0.1.1"
-    yt-transcript-strapi-plugin: "npm:^0.2.0"
   languageName: unknown
   linkType: soft
 
@@ -16426,28 +16341,6 @@ __metadata:
     typescript:
       optional: true
   checksum: 10c0/b4361427ea05b4c9e7d87635a323854ca871710e01cd2a46b5da70b34b78a50661c04b2065258f3f49be134ca414c429c804bc34edc277784a9ffa0c04a30b04
-  languageName: node
-  linkType: hard
-
-"react-intl@npm:^8.0.10":
-  version: 8.0.10
-  resolution: "react-intl@npm:8.0.10"
-  dependencies:
-    "@formatjs/ecma402-abstract": "npm:3.0.7"
-    "@formatjs/icu-messageformat-parser": "npm:3.2.1"
-    "@formatjs/intl": "npm:4.0.8"
-    "@types/hoist-non-react-statics": "npm:^3.3.1"
-    hoist-non-react-statics: "npm:^3.3.2"
-    intl-messageformat: "npm:11.0.8"
-    tslib: "npm:^2.8.0"
-  peerDependencies:
-    "@types/react": 19
-    react: 16 || 17 || 18 || 19
-    typescript: ^5.6.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 10c0/b374535edf10da01ef903603a24e7cccff4a755241b0fa5dd31533c929b3044f4c67f6ab1674d6004a10a2482332d029774a8852a3f4edc9ba8eafab98d56445
   languageName: node
   linkType: hard
 
@@ -18103,46 +17996,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-oauth-mcp-manager@npm:0.1.5":
-  version: 0.1.5
-  resolution: "strapi-oauth-mcp-manager@npm:0.1.5"
-  dependencies:
-    "@strapi/design-system": "npm:^2.0.0-rc.30"
-    "@strapi/icons": "npm:^2.0.0-rc.30"
-    react-intl: "npm:^8.0.10"
-  peerDependencies:
-    "@strapi/sdk-plugin": ^5.4.0
-    "@strapi/strapi": ^5.33.1
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    react-router-dom: ^6.30.2
-    styled-components: ^6.1.19
-  checksum: 10c0/972c32b4e45c974aac5ffca2a0b4b8c2ca9322f4569392e55c7a0aba60d55955d649dd426a9a82391487de2f9b0364cf5eae73a2fc592242839132837e654209
-  languageName: node
-  linkType: hard
-
-"strapi-plugin-ai-sdk-transcripts@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "strapi-plugin-ai-sdk-transcripts@npm:1.0.1"
-  dependencies:
-    "@strapi/design-system": "npm:^2.0.0-rc.12"
-    "@strapi/icons": "npm:^2.0.0-rc.12"
-    react-intl: "npm:^6.8.7"
-    undici: "npm:^6.21.0"
-    youtubei.js: "npm:^16.0.1"
-    zod: "npm:^3.23.0"
-  peerDependencies:
-    "@strapi/sdk-plugin": ^5.3.2
-    "@strapi/strapi": ^5.33.0
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    react-router-dom: ^6.28.0
-    strapi-plugin-ai-sdk: ">=0.7.0"
-    styled-components: ^6.1.13
-  checksum: 10c0/8529bcb950578de8cb8f5710ebf32fe35c54fcf124e7b7704998b2f495a8dbc0588f4554262b6eb25a760f1d7cdd41b4ec8e804df266f79e23d37f60f0bbf84b
-  languageName: node
-  linkType: hard
-
 "strapi-plugin-ai-sdk-yt-embeddings@npm:0.2.0":
   version: 0.2.0
   resolution: "strapi-plugin-ai-sdk-yt-embeddings@npm:0.2.0"
@@ -18167,6 +18020,28 @@ __metadata:
     react-router-dom: ^6.27.0
     styled-components: ^6.1.13
   checksum: 10c0/6dfd04631eb309482eb006daa42beb5f917f44a738ddae38e693ee5d091343f4044979135b9866b804c81a67782cd43e9bc8305a4c55e84bf248b1907b9d6cfb
+  languageName: node
+  linkType: hard
+
+"strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.2":
+  version: 1.0.2
+  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.2"
+  dependencies:
+    "@strapi/design-system": "npm:^2.0.0-rc.12"
+    "@strapi/icons": "npm:^2.0.0-rc.12"
+    react-intl: "npm:^6.8.7"
+    undici: "npm:^6.21.0"
+    youtubei.js: "npm:^16.0.1"
+    zod: "npm:^3.23.0"
+  peerDependencies:
+    "@strapi/sdk-plugin": ^5.3.2
+    "@strapi/strapi": ^5.33.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
+    react-router-dom: ^6.28.0
+    strapi-plugin-ai-sdk: ">=0.7.0"
+    styled-components: ^6.1.13
+  checksum: 10c0/0a380ab0c4d626ba9a62b9eff6ed84b5027788b583277c26fd13844f3b45ed97ccd63aafbe58962106fb98f4623b9eaa9c28ae612689b081db3b500fdd1643ab
   languageName: node
   linkType: hard
 
@@ -19934,56 +19809,6 @@ __metadata:
     "@bufbuild/protobuf": "npm:^2.0.0"
     meriyah: "npm:^6.1.4"
   checksum: 10c0/46ef1c35075f33cf48a81b307636a8a5142a80f06068dc5bfac347705644da90556f6d2fdceeb91b1eec5401d17df89ffe471c46038b8f98f3eb02e1419b05a3
-  languageName: node
-  linkType: hard
-
-"yt-embeddings-strapi-plugin@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "yt-embeddings-strapi-plugin@npm:0.1.1"
-  dependencies:
-    "@ai-sdk/openai": "npm:^1.x"
-    "@mdxeditor/editor": "npm:^3.52.3"
-    "@modelcontextprotocol/sdk": "npm:^1.12.0"
-    "@strapi/design-system": "npm:^2.0.0-rc.12"
-    "@strapi/icons": "npm:^2.0.0-rc.12"
-    ai: "npm:^4.x"
-    html-to-text: "npm:^9.0.5"
-    pg: "npm:^8.13.1"
-    qs: "npm:^6.13.1"
-    react-intl: "npm:^6.8.4"
-    react-markdown: "npm:^10.1.0"
-    remove-markdown: "npm:^0.5.5"
-    zod: "npm:^3.24.0"
-  peerDependencies:
-    "@strapi/sdk-plugin": ^5.2.7
-    "@strapi/strapi": ^5.2.0
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    react-router-dom: ^6.27.0
-    styled-components: ^6.1.13
-  checksum: 10c0/6c5e248380fc5f2af797442285d5b689ceee0412f9f11b3f3325b6004653696130f60736368c0a3ba3b48818bd23f92c7e2af77713c75cf0e7c2c9d69010867a
-  languageName: node
-  linkType: hard
-
-"yt-transcript-strapi-plugin@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "yt-transcript-strapi-plugin@npm:0.2.0"
-  dependencies:
-    "@modelcontextprotocol/sdk": "npm:^1.12.0"
-    "@strapi/design-system": "npm:^2.0.0-rc.12"
-    "@strapi/icons": "npm:^2.0.0-rc.12"
-    react-intl: "npm:^6.8.7"
-    undici: "npm:^6.21.0"
-    youtubei.js: "npm:^16.0.1"
-    zod: "npm:^3.23.0"
-  peerDependencies:
-    "@strapi/sdk-plugin": ^5.3.2
-    "@strapi/strapi": ^5.33.0
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    react-router-dom: ^6.28.0
-    styled-components: ^6.1.13
-  checksum: 10c0/d39606ba2e7d4054c04c47f36afd262dbae036f3ba18e19ccc206ed77010b0ef65549ace33ac106098b9d7211c0fdd0bc3421be6e2dacbbe25eb34dad4d73869
   languageName: node
   linkType: hard
 
