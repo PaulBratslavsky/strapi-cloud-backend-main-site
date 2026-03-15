@@ -35,8 +35,7 @@ export default ({ env }) => ({
   "strapi-plugin-lms": {
     enabled: true,
   },
-
-  'ocyris-strapi-builder-mcp': {
+  'strapi-builder-mcp': {
     enabled: true,
   },
 });
