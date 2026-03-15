@@ -1,33 +1,32 @@
 export default [
-  'strapi::logger',
-  'strapi::errors',
+  "strapi::logger",
+  "strapi::errors",
   {
-    name: 'strapi::security',
+    name: "strapi::security",
     config: {
       contentSecurityPolicy: {
-        useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:', 'blob:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io'],
-          'script-src': ["'self'", "'unsafe-inline'"],
-          'frame-ancestors': [
+          "script-src": ["'self'", "'unsafe-inline'"],
+          "frame-ancestors": [
             "'self'",
-            'https://deserving-harmony-9f5ca04daf.strapiapp.com',
+            "https://deserving-harmony-9f5ca04daf.strapiapp.com",
           ],
         },
       },
     },
   },
   {
-    name: 'strapi::cors',
+    name: "strapi::cors",
     config: {
-      origin: ['https://deserving-harmony-9f5ca04daf.strapiapp.com'],
+      origin: ["https://deserving-harmony-9f5ca04daf.strapiapp.com"],
+      headers: ["Content-Type", "Authorization", "Accept", "mcp-session-id"],
+      expose: ["mcp-session-id"],
     },
   },
-  'strapi::poweredBy',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
+  "strapi::poweredBy",
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
 ];
