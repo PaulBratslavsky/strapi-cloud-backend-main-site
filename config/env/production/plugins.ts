@@ -35,4 +35,8 @@ export default ({ env }) => ({
   "strapi-plugin-lms": {
     enabled: true,
   },
+
+  'strapi-builder-mcp': {
+    enabled: true,
+  },
 });
