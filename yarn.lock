@@ -14754,9 +14754,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ocyris-strapi-builder-mcp@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "ocyris-strapi-builder-mcp@npm:1.0.3"
+"ocyris-strapi-builder-mcp@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "ocyris-strapi-builder-mcp@npm:1.0.4"
   dependencies:
     "@modelcontextprotocol/sdk": "npm:^1.12.0"
     zod: "npm:^3.24.0"
@@ -14766,7 +14766,7 @@ __metadata:
     react-dom: ^18.0.0
     react-router-dom: ^6.0.0
     styled-components: ^6.0.0
-  checksum: 10c0/51565ae4a9c0c74e21580922de493499c93f198b03f5e15afca010e96940770c1b31877b20cddff6498d54e841b651cb738ae791d97eb82881268309b9788ebb
+  checksum: 10c0/b56280445005ab77904fc3800f88a5cf3add44c24bbaa23b26acd2c6471883b3f6ee5e27facf7eb8158f7e1a2e73fc8b5e3137cad99e97aac8d56c92244d19c6
   languageName: node
   linkType: hard
 
@@ -15271,7 +15271,7 @@ __metadata:
     "@types/react-dom": "npm:^18"
     better-sqlite3: "npm:11.3.0"
     octalens-mentions: "npm:^0.2.2"
-    ocyris-strapi-builder-mcp: "npm:^1.0.3"
+    ocyris-strapi-builder-mcp: "npm:^1.0.4"
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
