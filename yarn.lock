@@ -15415,7 +15415,7 @@ __metadata:
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.2.0"
     strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.2"
     strapi-plugin-lms: "npm:0.0.2"
-    strapi-plugin-music-manager: "npm:0.0.5"
+    strapi-plugin-music-manager: "npm:^0.1.0"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
   languageName: unknown
@@ -15942,7 +15942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.3, qs@npm:^6.11.0, qs@npm:^6.13.1, qs@npm:^6.14.0, qs@npm:^6.14.1, qs@npm:^6.5.2, qs@npm:^6.9.6":
+"qs@npm:^6.10.3, qs@npm:^6.11.0, qs@npm:^6.13.1, qs@npm:^6.14.0, qs@npm:^6.14.1, qs@npm:^6.15.0, qs@npm:^6.5.2, qs@npm:^6.9.6":
   version: 6.15.0
   resolution: "qs@npm:6.15.0"
   dependencies:
@@ -17947,11 +17947,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-music-manager@npm:0.0.5":
-  version: 0.0.5
-  resolution: "strapi-plugin-music-manager@npm:0.0.5"
+"strapi-plugin-music-manager@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "strapi-plugin-music-manager@npm:0.1.0"
   dependencies:
     audio-decode: "npm:^2.2.3"
+    qs: "npm:^6.15.0"
+    wavesurfer.js: "npm:^7.12.2"
   peerDependencies:
     "@strapi/design-system": "*"
     "@strapi/icons": "*"
@@ -17962,7 +17964,7 @@ __metadata:
     react-intl: ^6.0.0
     react-router-dom: ^6.0.0
     styled-components: ^6.0.0
-  checksum: 10c0/e00e67bfa8062b23e8dcfab920f764171b519ccc32eec705182518deb89f7dc3c2b1c37b6e0cc1fff84897c89885afb3a859587e3c398041edbb93b589f7a634
+  checksum: 10c0/490089d7824bad76a474057a6a8a4ea2ff3805dad8b4a4832837d07a944e348c983c959eea4e9ae7a46dfc6ea9ad02f62f9e95f7fb056b8fd2e626960b64125f
   languageName: node
   linkType: hard
 
@@ -19204,6 +19206,13 @@ __metadata:
     glob-to-regexp: "npm:^0.4.1"
     graceful-fs: "npm:^4.1.2"
   checksum: 10c0/dffbb483d1f61be90dc570630a1eb308581e2227d507d783b1d94a57ac7b705ecd9a1a4b73d73c15eab596d39874e5276a3d9cb88bbb698bafc3f8d08c34cf17
+  languageName: node
+  linkType: hard
+
+"wavesurfer.js@npm:^7.12.2":
+  version: 7.12.4
+  resolution: "wavesurfer.js@npm:7.12.4"
+  checksum: 10c0/2cb67d6ff90549c069bea0b7ed6978b30d6a3daf0a4919270204bd7d216412ddc8f1ce4f0e6fd974d9740235d4df82af1ccd1fe714e37a5053ea5096c752cbd8
   languageName: node
   linkType: hard
 
