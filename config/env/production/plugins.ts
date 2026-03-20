@@ -40,6 +40,6 @@ export default ({ env }) => ({
     enabled: true,
   },
   "strapi-plugin-music-manager": {
-    enable: true,
+    enabled: true,
   },
 });
