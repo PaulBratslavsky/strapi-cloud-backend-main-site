@@ -36,7 +36,10 @@ export default ({ env }) => ({
     enabled: true,
   },
 
-  'strapi-builder-mcp': {
+  "strapi-builder-mcp": {
     enabled: true,
+  },
+  "strapi-plugin-music-manager": {
+    enable: true,
   },
 });
