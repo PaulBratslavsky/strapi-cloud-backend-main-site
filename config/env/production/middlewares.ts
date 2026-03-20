@@ -7,12 +7,7 @@ export default [
       contentSecurityPolicy: {
         directives: {
           "script-src": ["'self'", "'unsafe-inline'"],
-          "frame-ancestors": [
-            "'self'",
-            "https://deserving-harmony-9f5ca04daf.strapiapp.com",
-            "https://my-music-site-ib5f.vercel.app",
-            "http://localhost:3000",
-          ],
+          "frame-ancestors": ["*"],
         },
       },
     },
@@ -20,11 +15,7 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: [
-        "https://deserving-harmony-9f5ca04daf.strapiapp.com",
-        "https://my-music-site-ib5f.vercel.app",
-        "http://localhost:3000",
-      ],
+      origin: "*",
       headers: ["Content-Type", "Authorization", "Accept", "mcp-session-id"],
       expose: ["mcp-session-id"],
     },
