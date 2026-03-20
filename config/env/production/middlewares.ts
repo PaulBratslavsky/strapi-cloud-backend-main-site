@@ -18,7 +18,11 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["https://deserving-harmony-9f5ca04daf.strapiapp.com"],
+      origin: [
+        "https://deserving-harmony-9f5ca04daf.strapiapp.com",
+        "https://my-music-site-ib5f.vercel.app",
+        "http://localhost:3000",
+      ],
       headers: ["Content-Type", "Authorization", "Accept", "mcp-session-id"],
       expose: ["mcp-session-id"],
     },
