@@ -28,7 +28,7 @@
     "strapi-plugin-ai-sdk-yt-embeddings": "0.2.0",
     "strapi-plugin-ai-sdk-yt-transcripts": "1.0.2",
     "strapi-plugin-lms": "0.0.2",
-    "strapi-plugin-music-manager": "^0.1.8",
+    "strapi-plugin-music-manager": "^0.1.9",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
