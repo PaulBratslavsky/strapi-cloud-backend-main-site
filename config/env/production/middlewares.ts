@@ -10,6 +10,8 @@ export default [
           "frame-ancestors": [
             "'self'",
             "https://deserving-harmony-9f5ca04daf.strapiapp.com",
+            "https://my-music-site-ib5f.vercel.app",
+            "http://localhost:3000",
           ],
         },
       },

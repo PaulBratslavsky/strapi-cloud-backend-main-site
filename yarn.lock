@@ -15415,7 +15415,7 @@ __metadata:
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.2.0"
     strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.2"
     strapi-plugin-lms: "npm:0.0.2"
-    strapi-plugin-music-manager: "npm:^0.1.7"
+    strapi-plugin-music-manager: "npm:^0.1.8"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
   languageName: unknown
@@ -17947,9 +17947,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-music-manager@npm:^0.1.7":
-  version: 0.1.7
-  resolution: "strapi-plugin-music-manager@npm:0.1.7"
+"strapi-plugin-music-manager@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "strapi-plugin-music-manager@npm:0.1.8"
   dependencies:
     audio-decode: "npm:^2.2.3"
     qs: "npm:^6.15.0"
@@ -17964,7 +17964,7 @@ __metadata:
     react-intl: ^6.0.0
     react-router-dom: ^6.0.0
     styled-components: ^6.0.0
-  checksum: 10c0/b218b1e37d01182576d4f8dc86ed893810cd857837a188cc5ae134c308e8980b27891d67dae2580b6164842b0bdc71a447961a3514c56ef2369978ff451f3c8d
+  checksum: 10c0/efb6fe042e40a04326cdd8d60c1b88f5815b4cf30df0de0489b58875f6c9b3f4532ab5dd367585f62ddc817beba66975dc592d404bdc4a5819959227cf234fb0
   languageName: node
   linkType: hard
 
