@@ -24,7 +24,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "strapi-plugin-ai-sdk": "^0.9.0",
+    "strapi-plugin-ai-sdk": "^0.10.0",
     "strapi-plugin-ai-sdk-yt-embeddings": "0.3.0",
     "strapi-plugin-ai-sdk-yt-transcripts": "1.0.3",
     "strapi-plugin-lms": "0.0.2",

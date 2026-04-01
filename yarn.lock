@@ -15411,7 +15411,7 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-plugin-ai-sdk: "npm:^0.9.0"
+    strapi-plugin-ai-sdk: "npm:^0.10.0"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
     strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.3"
     strapi-plugin-lms: "npm:0.0.2"
@@ -17904,9 +17904,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "strapi-plugin-ai-sdk@npm:0.9.0"
+"strapi-plugin-ai-sdk@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "strapi-plugin-ai-sdk@npm:0.10.0"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/react": "npm:^3.0.41"
@@ -17925,7 +17925,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/ba1c7e904f1b9824df27e3df2a7910da21bc723bd76d77b9a749c4e1e08aa9e496f3bac3b2e664439ff832ab0abd042b15a442362bf8731c0fde4137a2470d6e
+  checksum: 10c0/7e0c04f706b84a9de2f9b38f33a3c384f855f1216a017ab80a0d97e65cf3b76262891fc53e5ae1fc463ea1d040b73dd896c69c93cb487a3e55b4832d6af5623c
   languageName: node
   linkType: hard
 
