@@ -14849,9 +14849,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"octalens-mentions@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "octalens-mentions@npm:0.2.2"
+"octalens-mentions@npm:0.3.0":
+  version: 0.3.0
+  resolution: "octalens-mentions@npm:0.3.0"
   dependencies:
     "@modelcontextprotocol/sdk": "npm:^1.12.0"
     "@strapi/design-system": "npm:^2.0.0-rc.30"
@@ -14859,13 +14859,13 @@ __metadata:
     react-intl: "npm:^7.1.13"
     zod: "npm:^4.0.0"
   peerDependencies:
-    "@strapi/sdk-plugin": ^5.3.2
+    "@strapi/sdk-plugin": ^5.0.0 || ^6.0.0
     "@strapi/strapi": ^5.27.0
     react: ^18.3.1
     react-dom: ^18.3.1
     react-router-dom: ^6.30.1
     styled-components: ^6.1.19
-  checksum: 10c0/3af65152a1fa87f241fa666dfd1bbb108afaccbb26450c183e2441057cb5b8a89dbe03b11c8420073f032fc61d20725d29ec3d34aa17c1c92f209157422c0fad
+  checksum: 10c0/635ceb640dfad54f2f7b2b65e6fb6b2bb459dfb48dee13be79979a73274c77d8498ab27e3c06a148dfc57be0996cd5379114c05da38ff898fad5590b21f721a7
   languageName: node
   linkType: hard
 
@@ -15406,14 +15406,14 @@ __metadata:
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
     better-sqlite3: "npm:11.3.0"
-    octalens-mentions: "npm:^0.2.2"
+    octalens-mentions: "npm:0.3.0"
     ocyris-strapi-builder-mcp: "npm:^1.0.4"
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-plugin-ai-sdk: "npm:0.8.0"
-    strapi-plugin-ai-sdk-yt-embeddings: "npm:0.2.0"
-    strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.2"
+    strapi-plugin-ai-sdk: "npm:^0.9.0"
+    strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
+    strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.3"
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.1"
     styled-components: "npm:^6.0.0"
@@ -17855,9 +17855,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk-yt-embeddings@npm:0.2.0":
-  version: 0.2.0
-  resolution: "strapi-plugin-ai-sdk-yt-embeddings@npm:0.2.0"
+"strapi-plugin-ai-sdk-yt-embeddings@npm:0.3.0":
+  version: 0.3.0
+  resolution: "strapi-plugin-ai-sdk-yt-embeddings@npm:0.3.0"
   dependencies:
     "@ai-sdk/openai": "npm:^1.x"
     "@mdxeditor/editor": "npm:^3.52.3"
@@ -17878,13 +17878,13 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.27.0
     styled-components: ^6.1.13
-  checksum: 10c0/6dfd04631eb309482eb006daa42beb5f917f44a738ddae38e693ee5d091343f4044979135b9866b804c81a67782cd43e9bc8305a4c55e84bf248b1907b9d6cfb
+  checksum: 10c0/9337b24eca3f0a9b34b603251b4dc228d9dd53839e1afc09ab1dfc78395f276bd11f97fe3e6bc8b74bc72d9b35f0c1f77fc74ef25c1634301b37a499f88bf316
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.2":
-  version: 1.0.2
-  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.2"
+"strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.3":
+  version: 1.0.3
+  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.3"
   dependencies:
     "@strapi/design-system": "npm:^2.0.0-rc.12"
     "@strapi/icons": "npm:^2.0.0-rc.12"
@@ -17900,13 +17900,13 @@ __metadata:
     react-router-dom: ^6.28.0
     strapi-plugin-ai-sdk: ">=0.7.0"
     styled-components: ^6.1.13
-  checksum: 10c0/0a380ab0c4d626ba9a62b9eff6ed84b5027788b583277c26fd13844f3b45ed97ccd63aafbe58962106fb98f4623b9eaa9c28ae612689b081db3b500fdd1643ab
+  checksum: 10c0/c54092e6ed17d8d95cdf4ad130220b7bdfa2601f368f85ac2baef40062cbfcc12b2b098fcbbf95fe80d05014af25e55ee2ff597a49e8ba293d5b47dc9937e55c
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk@npm:0.8.0":
-  version: 0.8.0
-  resolution: "strapi-plugin-ai-sdk@npm:0.8.0"
+"strapi-plugin-ai-sdk@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "strapi-plugin-ai-sdk@npm:0.9.0"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/react": "npm:^3.0.41"
@@ -17925,7 +17925,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/a93d6b1bb93136f5498eb62dc8ccc0a47309ff5fa5f0fdcc073def9d8b792d8e848ac4db73fa0213525dc12aa114670aa4d3d172a4bfe9a9c7f2d64e66beb02b
+  checksum: 10c0/ba1c7e904f1b9824df27e3df2a7910da21bc723bd76d77b9a749c4e1e08aa9e496f3bac3b2e664439ff832ab0abd042b15a442362bf8731c0fde4137a2470d6e
   languageName: node
   linkType: hard
 
