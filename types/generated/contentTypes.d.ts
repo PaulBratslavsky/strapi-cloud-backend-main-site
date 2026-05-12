@@ -461,7 +461,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     featuredImage: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -498,7 +497,6 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     fullName: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -542,7 +540,6 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -577,7 +574,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     footer: Schema.Attribute.Component<'layout.footer', false>;
     header: Schema.Attribute.Component<'layout.header', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -623,7 +619,6 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -667,7 +662,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
@@ -696,7 +690,6 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
       Schema.Attribute.Private;
@@ -705,6 +698,46 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface PluginAiSdkYtTranscriptsTranscript
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'transcript';
+  info: {
+    displayName: 'Transcript';
+    pluralName: 'transcripts';
+    singularName: 'transcript';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fullTranscript: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::ai-sdk-yt-transcripts.transcript'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    transcriptWithTimeCodes: Schema.Attribute.JSON;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoId: Schema.Attribute.String;
   };
 }
 
@@ -731,7 +764,6 @@ export interface PluginAiSdkConversation extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -773,11 +805,10 @@ export interface PluginAiSdkMemory extends Struct.CollectionTypeSchema {
       ['general', 'preference', 'personal', 'project']
     > &
       Schema.Attribute.DefaultTo<'general'>;
-    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -785,6 +816,153 @@ export interface PluginAiSdkMemory extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginAiSdkNote extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_sdk_notes';
+  info: {
+    displayName: 'AI Note';
+    pluralName: 'notes';
+    singularName: 'note';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    category: Schema.Attribute.Enumeration<
+      ['research', 'snippet', 'idea', 'reference']
+    > &
+      Schema.Attribute.DefaultTo<'research'>;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::ai-sdk.note'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    source: Schema.Attribute.String;
+    tags: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginAiSdkPublicMemory extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_sdk_public_memories';
+  info: {
+    displayName: 'AI Public Memory';
+    pluralName: 'public-memories';
+    singularName: 'public-memory';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<
+      ['general', 'faq', 'product', 'policy']
+    > &
+      Schema.Attribute.DefaultTo<'general'>;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::ai-sdk.public-memory'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginAiSdkTask extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_sdk_tasks';
+  info: {
+    displayName: 'AI Task';
+    pluralName: 'tasks';
+    singularName: 'task';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    consequence: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<3>;
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    done: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    dueDate: Schema.Attribute.Date;
+    impact: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<3>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::ai-sdk.task'
+    > &
+      Schema.Attribute.Private;
+    priority: Schema.Attribute.Enumeration<
+      ['low', 'medium', 'high', 'urgent']
+    > &
+      Schema.Attribute.DefaultTo<'medium'>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -818,7 +996,6 @@ export interface PluginContentReleasesRelease
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -864,7 +1041,6 @@ export interface PluginContentReleasesReleaseAction
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     entryDocumentId: Schema.Attribute.String;
     isEntryValid: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -883,6 +1059,259 @@ export interface PluginContentReleasesReleaseAction
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface PluginFormsAiProviderConfig extends Struct.SingleTypeSchema {
+  collectionName: 'strapi_forms_ai_provider_config';
+  info: {
+    description: 'Per-instance AI provider configuration. Encrypted apiKey at rest. Phase 2.';
+    displayName: 'AI provider config';
+    pluralName: 'ai-provider-configs';
+    singularName: 'ai-provider-config';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    apiKeyEncrypted: Schema.Attribute.String & Schema.Attribute.Private;
+    baseUrl: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.ai-provider-config'
+    > &
+      Schema.Attribute.Private;
+    model: Schema.Attribute.String;
+    provider: Schema.Attribute.Enumeration<
+      ['anthropic', 'openai', 'ollama', 'mock', 'none']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'none'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginFormsForm extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_forms_forms';
+  info: {
+    description: 'A form definition (drag-and-drop schema, embeddable on any frontend).';
+    displayName: 'Form';
+    pluralName: 'forms';
+    singularName: 'form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.form'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    notificationRules: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.notification-rule'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    schema: Schema.Attribute.JSON & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    submissions: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.submission'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webhookConfigs: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.webhook-config'
+    >;
+  };
+}
+
+export interface PluginFormsNotificationRule
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_forms_notification_rules';
+  info: {
+    description: 'Email notification configuration attached to a form.';
+    displayName: 'Notification rule';
+    pluralName: 'notification-rules';
+    singularName: 'notification-rule';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    bodyTemplate: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enabled: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    form: Schema.Attribute.Relation<'manyToOne', 'plugin::forms.form'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.notification-rule'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    recipients: Schema.Attribute.JSON & Schema.Attribute.Required;
+    subjectTemplate: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginFormsSubmission extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_forms_submissions';
+  info: {
+    description: 'One row per form submission. `data` is keyed by field UUID.';
+    displayName: 'Submission';
+    pluralName: 'submissions';
+    singularName: 'submission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.JSON & Schema.Attribute.Required;
+    form: Schema.Attribute.Relation<'manyToOne', 'plugin::forms.form'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.submission'
+    > &
+      Schema.Attribute.Private;
+    metadata: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    status: Schema.Attribute.Enumeration<['submitted', 'read', 'spam']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'submitted'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginFormsWebhookConfig extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_forms_webhook_configs';
+  info: {
+    description: 'Outgoing webhook configuration attached to a form. `hmacSecret` stored encrypted at rest.';
+    displayName: 'Webhook config';
+    pluralName: 'webhook-configs';
+    singularName: 'webhook-config';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enabled: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    form: Schema.Attribute.Relation<'manyToOne', 'plugin::forms.form'> &
+      Schema.Attribute.Required;
+    headers: Schema.Attribute.JSON;
+    hmacSecretEncrypted: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::forms.webhook-config'
+    > &
+      Schema.Attribute.Private;
+    method: Schema.Attribute.Enumeration<['POST', 'PUT']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'POST'>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -911,7 +1340,6 @@ export interface PluginI18NLocale extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -961,7 +1389,6 @@ export interface PluginOctalensMentionsMention
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     imageUrl: Schema.Attribute.String;
     keyword: Schema.Attribute.String;
     language: Schema.Attribute.String;
@@ -1012,7 +1439,6 @@ export interface PluginOctalensMentionsResponse
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1065,7 +1491,6 @@ export interface PluginReviewWorkflowsWorkflow
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1117,7 +1542,6 @@ export interface PluginReviewWorkflowsWorkflowStage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1134,199 +1558,6 @@ export interface PluginReviewWorkflowsWorkflowStage
       'manyToOne',
       'plugin::review-workflows.workflow'
     >;
-  };
-}
-
-export interface PluginStrapiContentEmbeddingsEmbedding
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'strapi_content_embeddings';
-  info: {
-    displayName: 'Embedding';
-    pluralName: 'embeddings';
-    singularName: 'embedding';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: true;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    collectionType: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'standalone'>;
-    content: Schema.Attribute.Text;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    embedding: Schema.Attribute.JSON;
-    embeddingId: Schema.Attribute.String;
-    fieldName: Schema.Attribute.String & Schema.Attribute.DefaultTo<'content'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::strapi-content-embeddings.embedding'
-    > &
-      Schema.Attribute.Private;
-    metadata: Schema.Attribute.JSON;
-    publishedAt: Schema.Attribute.DateTime;
-    related: Schema.Attribute.Relation<'morphToOne'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginStrapiOauthMcpManagerMcpOauthClient
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'mcp_oauth_clients';
-  info: {
-    description: 'OAuth 2.0 clients for MCP authentication';
-    displayName: 'MCP OAuth Client';
-    pluralName: 'mcp-oauth-clients';
-    singularName: 'mcp-oauth-client';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: true;
-    };
-    'content-type-builder': {
-      visible: true;
-    };
-  };
-  attributes: {
-    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    clientId: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    clientSecret: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::strapi-oauth-mcp-manager.mcp-oauth-client'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    redirectUris: Schema.Attribute.JSON & Schema.Attribute.Required;
-    strapiApiToken: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginStrapiOauthMcpManagerMcpOauthCode
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'mcp_oauth_codes';
-  info: {
-    description: 'OAuth 2.0 authorization codes';
-    displayName: 'MCP OAuth Code';
-    pluralName: 'mcp-oauth-codes';
-    singularName: 'mcp-oauth-code';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    clientId: Schema.Attribute.String & Schema.Attribute.Required;
-    code: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    codeChallenge: Schema.Attribute.String;
-    codeChallengeMethod: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
-    expiresAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::strapi-oauth-mcp-manager.mcp-oauth-code'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    redirectUri: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    used: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-  };
-}
-
-export interface PluginStrapiOauthMcpManagerMcpOauthToken
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'mcp_oauth_tokens';
-  info: {
-    description: 'OAuth 2.0 access and refresh tokens';
-    displayName: 'MCP OAuth Token';
-    pluralName: 'mcp-oauth-tokens';
-    singularName: 'mcp-oauth-token';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    accessToken: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private &
-      Schema.Attribute.Unique;
-    clientId: Schema.Attribute.String & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
-    expiresAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::strapi-oauth-mcp-manager.mcp-oauth-token'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    refreshExpiresAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    refreshToken: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private &
-      Schema.Attribute.Unique;
-    revoked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -1359,7 +1590,6 @@ export interface PluginStrapiPluginLmsLmsComment
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1406,7 +1636,6 @@ export interface PluginStrapiPluginLmsLmsCourse
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     image: Schema.Attribute.Media<'images'>;
     isPremium: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     lessons: Schema.Attribute.Relation<
@@ -1458,7 +1687,6 @@ export interface PluginStrapiPluginLmsLmsLesson
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1475,6 +1703,80 @@ export interface PluginStrapiPluginLmsLmsLesson
     videoId: Schema.Attribute.String;
     videoTimecode: Schema.Attribute.Integer;
     videoUrl: Schema.Attribute.String;
+  };
+}
+
+export interface PluginStrapiPluginMusicManagerArtist
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'music_manager_artists';
+  info: {
+    description: 'A music artist or band';
+    displayName: 'Artist';
+    pluralName: 'artists';
+    singularName: 'artist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bio: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::strapi-plugin-music-manager.artist'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    songs: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::strapi-plugin-music-manager.song'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginStrapiPluginMusicManagerSong
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'music_manager_songs';
+  info: {
+    description: 'A music track with audio file and waveform data';
+    displayName: 'Song';
+    pluralName: 'songs';
+    singularName: 'song';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    artist: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::strapi-plugin-music-manager.artist'
+    >;
+    audio: Schema.Attribute.Media<'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    duration: Schema.Attribute.Float;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::strapi-plugin-music-manager.song'
+    > &
+      Schema.Attribute.Private;
+    peaks: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1503,7 +1805,6 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     ext: Schema.Attribute.String;
     folder: Schema.Attribute.Relation<'manyToOne', 'plugin::upload.folder'> &
       Schema.Attribute.Private;
@@ -1561,7 +1862,6 @@ export interface PluginUploadFolder extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     files: Schema.Attribute.Relation<'oneToMany', 'plugin::upload.file'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1616,7 +1916,6 @@ export interface PluginUsersPermissionsPermission
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1660,7 +1959,6 @@ export interface PluginUsersPermissionsRole
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.String;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1714,7 +2012,6 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1745,47 +2042,6 @@ export interface PluginUsersPermissionsUser
   };
 }
 
-export interface PluginYtTranscriptStrapiPluginTranscript
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'transcript';
-  info: {
-    displayName: 'Transcript';
-    pluralName: 'transcripts';
-    singularName: 'transcript';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: true;
-    };
-    'content-type-builder': {
-      visible: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    embedding: Schema.Attribute.Relation<'morphOne'>;
-    fullTranscript: Schema.Attribute.RichText;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::yt-transcript-strapi-plugin.transcript'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    transcriptWithTimeCodes: Schema.Attribute.JSON;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    videoId: Schema.Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ContentTypeSchemas {
@@ -1804,28 +2060,34 @@ declare module '@strapi/strapi' {
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::page.page': ApiPagePage;
       'api::tag.tag': ApiTagTag;
+      'plugin::ai-sdk-yt-transcripts.transcript': PluginAiSdkYtTranscriptsTranscript;
       'plugin::ai-sdk.conversation': PluginAiSdkConversation;
       'plugin::ai-sdk.memory': PluginAiSdkMemory;
+      'plugin::ai-sdk.note': PluginAiSdkNote;
+      'plugin::ai-sdk.public-memory': PluginAiSdkPublicMemory;
+      'plugin::ai-sdk.task': PluginAiSdkTask;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::forms.ai-provider-config': PluginFormsAiProviderConfig;
+      'plugin::forms.form': PluginFormsForm;
+      'plugin::forms.notification-rule': PluginFormsNotificationRule;
+      'plugin::forms.submission': PluginFormsSubmission;
+      'plugin::forms.webhook-config': PluginFormsWebhookConfig;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::octalens-mentions.mention': PluginOctalensMentionsMention;
       'plugin::octalens-mentions.response': PluginOctalensMentionsResponse;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
-      'plugin::strapi-content-embeddings.embedding': PluginStrapiContentEmbeddingsEmbedding;
-      'plugin::strapi-oauth-mcp-manager.mcp-oauth-client': PluginStrapiOauthMcpManagerMcpOauthClient;
-      'plugin::strapi-oauth-mcp-manager.mcp-oauth-code': PluginStrapiOauthMcpManagerMcpOauthCode;
-      'plugin::strapi-oauth-mcp-manager.mcp-oauth-token': PluginStrapiOauthMcpManagerMcpOauthToken;
       'plugin::strapi-plugin-lms.lms-comment': PluginStrapiPluginLmsLmsComment;
       'plugin::strapi-plugin-lms.lms-course': PluginStrapiPluginLmsLmsCourse;
       'plugin::strapi-plugin-lms.lms-lesson': PluginStrapiPluginLmsLmsLesson;
+      'plugin::strapi-plugin-music-manager.artist': PluginStrapiPluginMusicManagerArtist;
+      'plugin::strapi-plugin-music-manager.song': PluginStrapiPluginMusicManagerSong;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::yt-transcript-strapi-plugin.transcript': PluginYtTranscriptStrapiPluginTranscript;
     }
   }
 }
