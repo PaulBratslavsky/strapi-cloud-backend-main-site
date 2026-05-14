@@ -15694,7 +15694,7 @@ __metadata:
     strapi-plugin-ai-sdk: "npm:^0.10.0"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
     strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.3"
-    strapi-plugin-form-kit: "npm:^0.1.0"
+    strapi-plugin-form-kit: "npm:0.4.0"
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.1"
     styled-components: "npm:^6.0.0"
@@ -18262,9 +18262,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-form-kit@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "strapi-plugin-form-kit@npm:0.1.0"
+"strapi-plugin-form-kit@npm:0.4.0":
+  version: 0.4.0
+  resolution: "strapi-plugin-form-kit@npm:0.4.0"
   dependencies:
     "@anthropic-ai/sdk": "npm:^0.95.1"
     "@codemirror/lang-html": "npm:^6.4.11"
@@ -18290,7 +18290,7 @@ __metadata:
     react-intl: ^6.0.0 || ^7.0.0
     react-router-dom: ^5.2.0 || ^6.0.0
     styled-components: ^5.2.1 || ^6.0.0
-  checksum: 10c0/36223edfae5774bef0980a9ebb7f0b96f10c5a06b337da866793de725aefd6d9b19ee4adc869800416a8412935f08f33b59d975a170de1a11060d3ae1efe5fd1
+  checksum: 10c0/6f03c5aae583c458d1fbe4b5dd38108af701986ec9d4c4abece8628f36d8c39ac1befdfdebdbb5eb50b6550a30a012741e99945227d12973d77355c700f78961
   languageName: node
   linkType: hard
 
