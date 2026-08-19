@@ -3,15 +3,11 @@ export default ({ env }) => ({
     enabled: true,
     config: {
       anthropicApiKey: env("ANTHROPIC_API_KEY"),
-      chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-4-20250514"),
+      chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
       systemPrompt: env(
         "AI_SYSTEM_PROMPT",
         "You are a helpful AI assistant for this Strapi CMS. Answer questions clearly and concisely. Use your available tools to look up content when needed.",
       ),
-      publicChat: {
-        chatModel: "claude-haiku-4-5-20251001",
-        allowedContentTypes: [],
-      },
     },
   },
   "ai-sdk-yt-transcripts": {
