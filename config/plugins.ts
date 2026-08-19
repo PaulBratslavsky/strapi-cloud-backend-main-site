@@ -15,7 +15,7 @@ export default ({ env }) => ({
     },
   },
   "ai-sdk-yt-transcripts": {
-    enabled: true,
+    enabled: false,
     config: {
       proxyUrl: env("PROXY_URL"),
       chunkSizeSeconds: 300, // Chunk size for pagination (5 minutes)
@@ -24,14 +24,14 @@ export default ({ env }) => ({
       searchSegmentSeconds: 30, // Segment size for BM25 search
     },
   },
-  "ai-sdk-yt-embeddings": {
-    enabled: true,
-    config: {
-      openAIApiKey: env("OPENAI_API_KEY"),
-      neonConnectionString: env("NEON_CONNECTION_STRING"),
-      embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
-    },
-  },
+  // "ai-sdk-yt-embeddings": {
+  //   enabled: false,
+  //   config: {
+  //     openAIApiKey: env("OPENAI_API_KEY"),
+  //     neonConnectionString: env("NEON_CONNECTION_STRING"),
+  //     embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
+  //   },
+  // },
   "strapi-plugin-lms": {
     enabled: true,
   },
