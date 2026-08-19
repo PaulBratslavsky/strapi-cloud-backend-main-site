@@ -10191,6 +10191,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fflate@npm:^0.8.2":
+  version: 0.8.3
+  resolution: "fflate@npm:0.8.3"
+  checksum: 10c0/eab181ca37f5348ae76d4b6f840e0026e30220e33153289ac942222d8b9638237d486507dbcc09878d724095bd354993a2ee48bbee99c8f2c6440d4448719aa7
+  languageName: node
+  linkType: hard
+
 "file-selector@npm:^2.1.0":
   version: 2.1.2
   resolution: "file-selector@npm:2.1.2"
@@ -14644,9 +14651,9 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-plugin-ai-sdk: "npm:^1.2.0"
+    strapi-plugin-ai-sdk: "npm:^1.2.1"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
-    strapi-plugin-ai-sdk-yt-transcripts: "npm:1.0.3"
+    strapi-plugin-ai-sdk-yt-transcripts: "npm:^1.1.1"
     strapi-plugin-form-kit: "npm:^0.4.1"
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.2"
@@ -16899,31 +16906,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.3":
-  version: 1.0.3
-  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.0.3"
+"strapi-plugin-ai-sdk-yt-transcripts@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.1.1"
   dependencies:
     "@strapi/design-system": "npm:^2.0.0-rc.12"
     "@strapi/icons": "npm:^2.0.0-rc.12"
     react-intl: "npm:^6.8.7"
     undici: "npm:^6.21.0"
-    youtubei.js: "npm:^16.0.1"
-    zod: "npm:^3.23.0"
+    youtubei.js: "npm:^17.0.1"
+    zod: "npm:^4.3.5"
   peerDependencies:
     "@strapi/sdk-plugin": ^5.3.2
-    "@strapi/strapi": ^5.33.0
+    "@strapi/strapi": ^5.47.0
     react: ^18.3.1
     react-dom: ^18.3.1
     react-router-dom: ^6.28.0
-    strapi-plugin-ai-sdk: ">=0.7.0"
+    strapi-plugin-ai-sdk: ^1.1.0
     styled-components: ^6.1.13
-  checksum: 10c0/c54092e6ed17d8d95cdf4ad130220b7bdfa2601f368f85ac2baef40062cbfcc12b2b098fcbbf95fe80d05014af25e55ee2ff597a49e8ba293d5b47dc9937e55c
+  peerDependenciesMeta:
+    strapi-plugin-ai-sdk:
+      optional: true
+  checksum: 10c0/d69aafc24e32fb0cc6f994b1fd1781fc887e563a088a6db403ca72c3314c9477e99f853695875f0a0878a09dadde7f55faa138a55985a5bf4e5dc100094f69d7
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "strapi-plugin-ai-sdk@npm:1.2.0"
+"strapi-plugin-ai-sdk@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "strapi-plugin-ai-sdk@npm:1.2.1"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/openai-compatible": "npm:^2.0.69"
@@ -16942,7 +16952,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/defe96ee84d76b1f3991375977a890deba1c4318a7994d3c2cdf9fe1b031c91774cb648b31111be22b2f0cb54132eb8190fa5b2783ccdc8329bbf56380fd1fa6
+  checksum: 10c0/ce3943990fc2c58bd12d62c639d418993899061ed02368e31073f695c475e0f9087f0b466331378eaab956f44462dfa9b3766337131b456a060344cb69a4208d
   languageName: node
   linkType: hard
 
@@ -18498,13 +18508,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"youtubei.js@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "youtubei.js@npm:16.0.1"
+"youtubei.js@npm:^17.0.1":
+  version: 17.2.0
+  resolution: "youtubei.js@npm:17.2.0"
   dependencies:
     "@bufbuild/protobuf": "npm:^2.0.0"
+    fflate: "npm:^0.8.2"
     meriyah: "npm:^6.1.4"
-  checksum: 10c0/46ef1c35075f33cf48a81b307636a8a5142a80f06068dc5bfac347705644da90556f6d2fdceeb91b1eec5401d17df89ffe471c46038b8f98f3eb02e1419b05a3
+  checksum: 10c0/82ade381c6b1173b0fdb609a86c6a3c2d82db9c4add7dcaa06574507bb2586b885df4d5fd3f0d92e9cf67fd85a58158030f62bd576357432121785a52d167ab8
   languageName: node
   linkType: hard
 
@@ -18532,7 +18543,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.25.76, zod@npm:^3.19.1, zod@npm:^3.23.0, zod@npm:^3.23.8, zod@npm:^3.24.0, zod@npm:^3.24.1":
+"zod@npm:3.25.76, zod@npm:^3.19.1, zod@npm:^3.23.8, zod@npm:^3.24.0, zod@npm:^3.24.1":
   version: 3.25.76
   resolution: "zod@npm:3.25.76"
   checksum: 10c0/5718ec35e3c40b600316c5b4c5e4976f7fee68151bc8f8d90ec18a469be9571f072e1bbaace10f1e85cf8892ea12d90821b200e980ab46916a6166a4260a983c
