@@ -43,6 +43,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ai-sdk/gateway@npm:3.0.179":
+  version: 3.0.179
+  resolution: "@ai-sdk/gateway@npm:3.0.179"
+  dependencies:
+    "@ai-sdk/provider": "npm:3.0.15"
+    "@ai-sdk/provider-utils": "npm:4.0.46"
+    "@vercel/oidc": "npm:3.2.0"
+  peerDependencies:
+    zod: ^3.25.76 || ^4.1.8
+  checksum: 10c0/ecbfdd582a636f30b6051a15f03453600159e9a492e51f3b19cfa498fb7924a4f91538a0917bfe52d1c75f830a4538d7638c4b5d5e782c72d533611b9cdb7d4e
+  languageName: node
+  linkType: hard
+
 "@ai-sdk/openai-compatible@npm:^2.0.69":
   version: 2.0.69
   resolution: "@ai-sdk/openai-compatible@npm:2.0.69"
@@ -167,6 +180,20 @@ __metadata:
     zod:
       optional: true
   checksum: 10c0/cca6968a375572f57648a294b05be11708bd41f11b93fd1b37c187c5900145cf98df7fb9d7160f7711bb57d9e3111f04b2c06032994cd17c8279c0209ff1c2e0
+  languageName: node
+  linkType: hard
+
+"@ai-sdk/react@npm:^3.0.41":
+  version: 3.0.267
+  resolution: "@ai-sdk/react@npm:3.0.267"
+  dependencies:
+    "@ai-sdk/provider-utils": "npm:4.0.46"
+    ai: "npm:6.0.264"
+    swr: "npm:^2.2.5"
+    throttleit: "npm:2.1.0"
+  peerDependencies:
+    react: ^18 || ~19.0.1 || ~19.1.2 || ^19.2.1
+  checksum: 10c0/49b14e8674a83ecb435a2d63c45a8864fecadfb2048ca5df66f2652e0a9cd797722ce9e07d41ff469722f141a15817e361876c9da2e3aafc53c55d46ae9b6b41
   languageName: node
   linkType: hard
 
@@ -7487,6 +7514,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ai@npm:6.0.264":
+  version: 6.0.264
+  resolution: "ai@npm:6.0.264"
+  dependencies:
+    "@ai-sdk/gateway": "npm:3.0.179"
+    "@ai-sdk/provider": "npm:3.0.15"
+    "@ai-sdk/provider-utils": "npm:4.0.46"
+    "@opentelemetry/api": "npm:^1.9.0"
+  peerDependencies:
+    zod: ^3.25.76 || ^4.1.8
+  checksum: 10c0/8b74f1d4a24c0d16545920c9d94b0a1c004ff3fcac20514939df69a8e8014b5ae24703d2b8253469b6749e6b4f448a96ba4f94862fa99b8d5449f4d37bc85cde
+  languageName: node
+  linkType: hard
+
 "ai@npm:^4.x":
   version: 4.3.19
   resolution: "ai@npm:4.3.19"
@@ -14546,7 +14587,7 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-plugin-ai-sdk: "npm:^2.0.1"
+    strapi-plugin-ai-sdk: "npm:^2.5.0"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
     strapi-plugin-ai-sdk-yt-transcripts: "npm:^1.1.1"
     strapi-plugin-form-kit: "npm:^0.4.1"
@@ -16804,12 +16845,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "strapi-plugin-ai-sdk@npm:2.0.1"
+"strapi-plugin-ai-sdk@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "strapi-plugin-ai-sdk@npm:2.5.0"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/openai-compatible": "npm:^2.0.69"
+    "@ai-sdk/react": "npm:^3.0.41"
     "@strapi/design-system": "npm:^2.0.0-rc.30"
     "@strapi/icons": "npm:^2.0.0-rc.30"
     ai: "npm:^6.0.39"
@@ -16822,7 +16864,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/90477813f8dd8e2ca30b56e82d2f1871f0f94fd3962eab6b3faa14bb7e4b2cfe27c580cca46d4792d1c5c94c79ff594f51e01ab1bc819b6ad242f6c0347c4d4c
+  checksum: 10c0/59987fe6d9ebbc4f2795be0518fcd09217d79748fea934faa2bfccb8f57170ead163d282df88d6317a85ba44fa0d7e41ad7cfb81d92a212a6a63c5646bc6aeeb
   languageName: node
   linkType: hard
 
