@@ -14589,7 +14589,7 @@ __metadata:
     react-router-dom: "npm:^6.0.0"
     strapi-plugin-ai-sdk: "npm:^2.6.0"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
-    strapi-plugin-ai-sdk-yt-transcripts: "npm:^1.1.1"
+    strapi-plugin-ai-sdk-yt-transcripts: "npm:^1.2.0"
     strapi-plugin-form-kit: "npm:^0.4.1"
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.2"
@@ -16820,9 +16820,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-sdk-yt-transcripts@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.1.1"
+"strapi-plugin-ai-sdk-yt-transcripts@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.2.0"
   dependencies:
     "@strapi/design-system": "npm:^2.0.0-rc.12"
     "@strapi/icons": "npm:^2.0.0-rc.12"
@@ -16841,7 +16841,7 @@ __metadata:
   peerDependenciesMeta:
     strapi-plugin-ai-sdk:
       optional: true
-  checksum: 10c0/d69aafc24e32fb0cc6f994b1fd1781fc887e563a088a6db403ca72c3314c9477e99f853695875f0a0878a09dadde7f55faa138a55985a5bf4e5dc100094f69d7
+  checksum: 10c0/71930c1f3e6bfef92a86f2518abcdc7d6e5e6421df3ce66af9e85635c677918564a35b8e60a5e91caeba5f8d38e07adba66c72a25b80d604ec6e8a14e6b85ab0
   languageName: node
   linkType: hard
 
