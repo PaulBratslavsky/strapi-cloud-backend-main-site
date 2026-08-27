@@ -1,6 +1,16 @@
 export default ({ env }) => ({
-  "ai-sdk": {
+  "ai-chat": {
     enabled: true,
+    // Load a working copy of the plugin instead of the published package.
+    //
+    // Gated on an env var rather than hardcoded, because this file ships to
+    // production: a `resolve` path pointing outside the repo exists only on a
+    // dev machine and would fail the deployed boot. Set AI_SDK_LOCAL_PATH in
+    // your local .env (gitignored) to link; leave it unset anywhere else and
+    // the npm release is used.
+    ...(env("AI_SDK_LOCAL_PATH")
+      ? { resolve: env("AI_SDK_LOCAL_PATH") }
+      : {}),
     config: {
       anthropicApiKey: env("ANTHROPIC_API_KEY"),
       chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
@@ -10,8 +20,8 @@ export default ({ env }) => ({
       ),
     },
   },
-  "ai-sdk-yt-transcripts": {
-    enabled: false,
+  "youtube-transcripts": {
+    enabled: true,
     config: {
       proxyUrl: env("PROXY_URL"),
       chunkSizeSeconds: 300, // Chunk size for pagination (5 minutes)

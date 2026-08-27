@@ -14560,12 +14560,12 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-plugin-ai-chat: "npm:^2.8.0"
+    strapi-plugin-ai-chat: "npm:^3.0.0"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
-    strapi-plugin-ai-sdk-yt-transcripts: "npm:^1.2.0"
     strapi-plugin-form-kit: "npm:^0.4.1"
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.2"
+    strapi-plugin-youtube-transcripts: "npm:^2.1.0"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
   languageName: unknown
@@ -16766,9 +16766,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-chat@npm:^2.8.0":
-  version: 2.8.0
-  resolution: "strapi-plugin-ai-chat@npm:2.8.0"
+"strapi-plugin-ai-chat@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "strapi-plugin-ai-chat@npm:3.0.0"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/openai-compatible": "npm:^2.0.69"
@@ -16785,7 +16785,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/9f0b4f39d99b95e432b835d063d0d70e7b8b2039a5bdb34e46456a4b47cebc5557f19933d4f3ae0b7d114dfe65ba742eb53c12b423ee8a7322b7a66d00319c87
+  checksum: 10c0/a7487788af28ba2e2da38399e899177d847bb5e6d366cbee8666dd2363128f7b093a537bf18c3d543a407179d837549acb07ae2d06e02f79bc10a1266ae0cb80
   languageName: node
   linkType: hard
 
@@ -16813,31 +16813,6 @@ __metadata:
     react-router-dom: ^6.27.0
     styled-components: ^6.1.13
   checksum: 10c0/9337b24eca3f0a9b34b603251b4dc228d9dd53839e1afc09ab1dfc78395f276bd11f97fe3e6bc8b74bc72d9b35f0c1f77fc74ef25c1634301b37a499f88bf316
-  languageName: node
-  linkType: hard
-
-"strapi-plugin-ai-sdk-yt-transcripts@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "strapi-plugin-ai-sdk-yt-transcripts@npm:1.2.0"
-  dependencies:
-    "@strapi/design-system": "npm:^2.0.0-rc.12"
-    "@strapi/icons": "npm:^2.0.0-rc.12"
-    react-intl: "npm:^6.8.7"
-    undici: "npm:^6.21.0"
-    youtubei.js: "npm:^17.0.1"
-    zod: "npm:^4.3.5"
-  peerDependencies:
-    "@strapi/sdk-plugin": ^5.3.2
-    "@strapi/strapi": ^5.47.0
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    react-router-dom: ^6.28.0
-    strapi-plugin-ai-sdk: ^1.1.0
-    styled-components: ^6.1.13
-  peerDependenciesMeta:
-    strapi-plugin-ai-sdk:
-      optional: true
-  checksum: 10c0/71930c1f3e6bfef92a86f2518abcdc7d6e5e6421df3ce66af9e85635c677918564a35b8e60a5e91caeba5f8d38e07adba66c72a25b80d604ec6e8a14e6b85ab0
   languageName: node
   linkType: hard
 
@@ -16909,6 +16884,31 @@ __metadata:
     react-router-dom: ^6.0.0
     styled-components: ^6.0.0
   checksum: 10c0/cf56c5a5f17dbbd1c1a7ad12c2e49b0004f13faebd227a705f1e6a0b563e7922f6cfcdb5f93f4b3ba897707ad3bcaf8145512a2ed7d15d9cde32a16f3fd8aea6
+  languageName: node
+  linkType: hard
+
+"strapi-plugin-youtube-transcripts@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "strapi-plugin-youtube-transcripts@npm:2.1.0"
+  dependencies:
+    "@strapi/design-system": "npm:^2.0.0-rc.12"
+    "@strapi/icons": "npm:^2.0.0-rc.12"
+    react-intl: "npm:^6.8.7"
+    undici: "npm:^6.21.0"
+    youtubei.js: "npm:^17.0.1"
+    zod: "npm:^4.3.5"
+  peerDependencies:
+    "@strapi/sdk-plugin": ^5.3.2
+    "@strapi/strapi": ^5.47.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
+    react-router-dom: ^6.28.0
+    strapi-plugin-ai-sdk: ^2.0.0
+    styled-components: ^6.1.13
+  peerDependenciesMeta:
+    strapi-plugin-ai-sdk:
+      optional: true
+  checksum: 10c0/7a30cae99adc02ce095451cee3636416a809d5829534349227fa525fdc1ca6781b7655022e053e0003d3ed920b9a1c8a33b150e1f486ac8da026f717311364d0
   languageName: node
   linkType: hard
 

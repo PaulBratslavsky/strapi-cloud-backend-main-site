@@ -1,5 +1,5 @@
 export default ({ env }) => ({
-  "ai-sdk": {
+  "ai-chat": {
     enabled: true,
     config: {
       anthropicApiKey: env("ANTHROPIC_API_KEY"),
@@ -10,7 +10,7 @@ export default ({ env }) => ({
       ),
     },
   },
-  "ai-sdk-yt-transcripts": {
+  "youtube-transcripts": {
     enabled: true,
     config: {
       proxyUrl: env("PROXY_URL"),
