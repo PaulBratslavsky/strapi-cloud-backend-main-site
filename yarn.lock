@@ -14560,12 +14560,12 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-plugin-ai-chat: "npm:^3.0.0"
+    strapi-plugin-ai-chat: "npm:^3.0.1"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
     strapi-plugin-form-kit: "npm:^0.4.1"
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.2"
-    strapi-plugin-youtube-transcripts: "npm:^2.1.0"
+    strapi-plugin-youtube-transcripts: "npm:^2.1.1"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
   languageName: unknown
@@ -16766,9 +16766,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-chat@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "strapi-plugin-ai-chat@npm:3.0.0"
+"strapi-plugin-ai-chat@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "strapi-plugin-ai-chat@npm:3.0.1"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/openai-compatible": "npm:^2.0.69"
@@ -16785,7 +16785,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/a7487788af28ba2e2da38399e899177d847bb5e6d366cbee8666dd2363128f7b093a537bf18c3d543a407179d837549acb07ae2d06e02f79bc10a1266ae0cb80
+  checksum: 10c0/d31386fdc602f7951e6f00fb9fa6cec13e87edbe46a2ad49d14836530ce17e43385fd45ccf659932be3fef660b42ad9b1d719ec321b4311e3b46ac2124c6c1c9
   languageName: node
   linkType: hard
 
@@ -16887,9 +16887,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-youtube-transcripts@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "strapi-plugin-youtube-transcripts@npm:2.1.0"
+"strapi-plugin-youtube-transcripts@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "strapi-plugin-youtube-transcripts@npm:2.1.1"
   dependencies:
     "@strapi/design-system": "npm:^2.0.0-rc.12"
     "@strapi/icons": "npm:^2.0.0-rc.12"
@@ -16903,12 +16903,12 @@ __metadata:
     react: ^18.3.1
     react-dom: ^18.3.1
     react-router-dom: ^6.28.0
-    strapi-plugin-ai-sdk: ^2.0.0
+    strapi-plugin-ai-chat: ^3.0.0
     styled-components: ^6.1.13
   peerDependenciesMeta:
-    strapi-plugin-ai-sdk:
+    strapi-plugin-ai-chat:
       optional: true
-  checksum: 10c0/7a30cae99adc02ce095451cee3636416a809d5829534349227fa525fdc1ca6781b7655022e053e0003d3ed920b9a1c8a33b150e1f486ac8da026f717311364d0
+  checksum: 10c0/f2fb63e254d225ecab1d26c33ac6b5d7677c446b0d79f88cec7aa78de0a72320f54a39c3d9edaa3812cc5248b18c61f58a704e6fc4f934b37fcdf6aac7b2c134
   languageName: node
   linkType: hard
 
