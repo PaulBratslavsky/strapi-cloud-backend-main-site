@@ -714,8 +714,8 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface PluginAiSdkConversation extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_sdk_conversations';
+export interface PluginAiChatConversation extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_chat_conversations';
   info: {
     displayName: 'AI Conversation';
     pluralName: 'conversations';
@@ -740,7 +740,7 @@ export interface PluginAiSdkConversation extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'plugin::ai-sdk.conversation'
+      'plugin::ai-chat.conversation'
     > &
       Schema.Attribute.Private;
     messages: Schema.Attribute.JSON & Schema.Attribute.Required;
@@ -754,8 +754,8 @@ export interface PluginAiSdkConversation extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface PluginAiSdkMemory extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_sdk_memories';
+export interface PluginAiChatMemory extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_chat_memories';
   info: {
     displayName: 'AI Memory';
     pluralName: 'memories';
@@ -785,7 +785,7 @@ export interface PluginAiSdkMemory extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'plugin::ai-sdk.memory'
+      'plugin::ai-chat.memory'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -795,8 +795,8 @@ export interface PluginAiSdkMemory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface PluginAiSdkNote extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_sdk_notes';
+export interface PluginAiChatNote extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_chat_notes';
   info: {
     displayName: 'AI Note';
     pluralName: 'notes';
@@ -826,7 +826,7 @@ export interface PluginAiSdkNote extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'plugin::ai-sdk.note'
+      'plugin::ai-chat.note'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -839,10 +839,10 @@ export interface PluginAiSdkNote extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface PluginAiSdkPublicMemory extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_sdk_public_memories';
+export interface PluginAiChatPublicMemory extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_chat_public_memories';
   info: {
-    displayName: 'AI Public Memory';
+    displayName: 'AI Shared Memory';
     pluralName: 'public-memories';
     singularName: 'public-memory';
   };
@@ -869,7 +869,7 @@ export interface PluginAiSdkPublicMemory extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'plugin::ai-sdk.public-memory'
+      'plugin::ai-chat.public-memory'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -879,8 +879,8 @@ export interface PluginAiSdkPublicMemory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface PluginAiSdkTask extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_sdk_tasks';
+export interface PluginAiChatTask extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_chat_tasks';
   info: {
     displayName: 'AI Task';
     pluralName: 'tasks';
@@ -927,7 +927,7 @@ export interface PluginAiSdkTask extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'plugin::ai-sdk.task'
+      'plugin::ai-chat.task'
     > &
       Schema.Attribute.Private;
     priority: Schema.Attribute.Enumeration<
@@ -1328,108 +1328,6 @@ export interface PluginI18NLocale extends Struct.CollectionTypeSchema {
         number
       >;
     publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginOctalensMentionsMention
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'mention';
-  info: {
-    displayName: 'Mention';
-    pluralName: 'mentions';
-    singularName: 'mention';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: true;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    action: Schema.Attribute.String;
-    author: Schema.Attribute.String;
-    authorProfileLink: Schema.Attribute.String;
-    body: Schema.Attribute.Text;
-    bookmarked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    imageUrl: Schema.Attribute.String;
-    keyword: Schema.Attribute.String;
-    language: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::octalens-mentions.mention'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    relevanceComment: Schema.Attribute.Text;
-    relevanceScore: Schema.Attribute.String;
-    sentimentLabel: Schema.Attribute.String;
-    source: Schema.Attribute.String;
-    sourceId: Schema.Attribute.String;
-    subreddit: Schema.Attribute.String;
-    timestamp: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    url: Schema.Attribute.String;
-    viewId: Schema.Attribute.Integer;
-    viewName: Schema.Attribute.String;
-  };
-}
-
-export interface PluginOctalensMentionsResponse
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'response';
-  info: {
-    displayName: 'Response';
-    pluralName: 'responses';
-    singularName: 'response';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: true;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::octalens-mentions.response'
-    > &
-      Schema.Attribute.Private;
-    mention: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::octalens-mentions.mention'
-    >;
-    notes: Schema.Attribute.Text;
-    platform: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    respondedAt: Schema.Attribute.DateTime;
-    responseText: Schema.Attribute.Text & Schema.Attribute.Required;
-    responseUrl: Schema.Attribute.String;
-    status: Schema.Attribute.Enumeration<['draft', 'posted', 'failed']> &
-      Schema.Attribute.DefaultTo<'draft'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2016,6 +1914,56 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface PluginYoutubeTranscriptsTranscript
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'youtube_transcripts';
+  info: {
+    displayName: 'Transcript';
+    pluralName: 'transcripts';
+    singularName: 'transcript';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: true;
+    };
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    category: Schema.Attribute.String;
+    channelId: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    durationSec: Schema.Attribute.Integer;
+    fetchedAt: Schema.Attribute.DateTime;
+    fullTranscript: Schema.Attribute.RichText;
+    keywords: Schema.Attribute.JSON;
+    language: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::youtube-transcripts.transcript'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    thumbnailUrl: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    transcriptWithTimeCodes: Schema.Attribute.JSON;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoId: Schema.Attribute.String;
+    videoPublishedAt: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ContentTypeSchemas {
@@ -2034,11 +1982,11 @@ declare module '@strapi/strapi' {
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::page.page': ApiPagePage;
       'api::tag.tag': ApiTagTag;
-      'plugin::ai-sdk.conversation': PluginAiSdkConversation;
-      'plugin::ai-sdk.memory': PluginAiSdkMemory;
-      'plugin::ai-sdk.note': PluginAiSdkNote;
-      'plugin::ai-sdk.public-memory': PluginAiSdkPublicMemory;
-      'plugin::ai-sdk.task': PluginAiSdkTask;
+      'plugin::ai-chat.conversation': PluginAiChatConversation;
+      'plugin::ai-chat.memory': PluginAiChatMemory;
+      'plugin::ai-chat.note': PluginAiChatNote;
+      'plugin::ai-chat.public-memory': PluginAiChatPublicMemory;
+      'plugin::ai-chat.task': PluginAiChatTask;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::forms.ai-provider-config': PluginFormsAiProviderConfig;
@@ -2047,8 +1995,6 @@ declare module '@strapi/strapi' {
       'plugin::forms.submission': PluginFormsSubmission;
       'plugin::forms.webhook-config': PluginFormsWebhookConfig;
       'plugin::i18n.locale': PluginI18NLocale;
-      'plugin::octalens-mentions.mention': PluginOctalensMentionsMention;
-      'plugin::octalens-mentions.response': PluginOctalensMentionsResponse;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
       'plugin::strapi-plugin-lms.lms-comment': PluginStrapiPluginLmsLmsComment;
@@ -2061,6 +2007,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'plugin::youtube-transcripts.transcript': PluginYoutubeTranscriptsTranscript;
     }
   }
 }
