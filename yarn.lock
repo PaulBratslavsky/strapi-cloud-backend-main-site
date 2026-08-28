@@ -14560,12 +14560,12 @@ __metadata:
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-router-dom: "npm:^6.0.0"
-    strapi-plugin-ai-chat: "npm:^3.1.0"
+    strapi-plugin-ai-chat: "npm:^3.3.0"
     strapi-plugin-ai-sdk-yt-embeddings: "npm:0.3.0"
     strapi-plugin-form-kit: "npm:^0.4.1"
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.2"
-    strapi-plugin-youtube-transcripts: "npm:^2.2.0"
+    strapi-plugin-youtube-transcripts: "npm:^2.3.0"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
   languageName: unknown
@@ -16766,9 +16766,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-ai-chat@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "strapi-plugin-ai-chat@npm:3.1.0"
+"strapi-plugin-ai-chat@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "strapi-plugin-ai-chat@npm:3.3.0"
   dependencies:
     "@ai-sdk/anthropic": "npm:^3.0.15"
     "@ai-sdk/openai-compatible": "npm:^2.0.69"
@@ -16785,7 +16785,7 @@ __metadata:
     react-dom: ^18.3.1
     react-router-dom: ^6.30.3
     styled-components: ^6.3.8
-  checksum: 10c0/2b5a8a58f49f91f026a548a86f7f93d31d077ebd64150412612429cc27effb82f23c5ffaba776bb83c6692d8a0a8723884496e216b83a66b1feb7ae3baa5dca4
+  checksum: 10c0/cf5336c4f480b5b82a2047c34d27ff4cc1978e49ebf4dcde560c17eb66a674acb51838ba3e1c3e40035455b9f92f319ae59a278823e5a11eac9a1ec30086735f
   languageName: node
   linkType: hard
 
@@ -16887,9 +16887,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-youtube-transcripts@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "strapi-plugin-youtube-transcripts@npm:2.2.0"
+"strapi-plugin-youtube-transcripts@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "strapi-plugin-youtube-transcripts@npm:2.3.0"
   dependencies:
     "@strapi/design-system": "npm:^2.0.0-rc.12"
     "@strapi/icons": "npm:^2.0.0-rc.12"
@@ -16908,7 +16908,7 @@ __metadata:
   peerDependenciesMeta:
     strapi-plugin-ai-chat:
       optional: true
-  checksum: 10c0/b66a63450790fd871574135349b5dc92885d3a29ec05c63622e4f12ffd8ed4db90fcbeb6782e80c0d134965fb58ab4e3b79f658188f52bb1d091627ad55178b1
+  checksum: 10c0/ea4cf9cfd1189aaa305d16ac055958f7b0dedf1ef3a87779fb9352577c43f1e15958084a52c28e070d8eaea00614599ebd1220490fbdb30a6dc21f59f64de306
   languageName: node
   linkType: hard
 
