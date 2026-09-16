@@ -12,7 +12,7 @@ export default ({ env }) => ({
       ? { resolve: env("AI_SDK_LOCAL_PATH") }
       : {}),
     config: {
-      anthropicApiKey: env("ANTHROPIC_API_KEY"),
+      apiKey: env("ANTHROPIC_API_KEY"),
       chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
       systemPrompt: env(
         "AI_SYSTEM_PROMPT",
@@ -46,5 +46,15 @@ export default ({ env }) => ({
   },
   'strapi-plugin-music-manager': {
     enabled: true,
+  },
+  // OAuth sign-in for the built-in /mcp server. Same local-link pattern as
+  // ai-chat: set OAUTH_MCP_LOCAL_PATH in your local .env to load the working
+  // copy in ../plugins/strapi-oauth-mcp-manager (run `npm run build` there
+  // after changes; Strapi loads its dist/).
+  'strapi-oauth-mcp-manager': {
+    enabled: true,
+    ...(env("OAUTH_MCP_LOCAL_PATH")
+      ? { resolve: env("OAUTH_MCP_LOCAL_PATH") }
+      : {}),
   },
 });

@@ -2,7 +2,7 @@ export default ({ env }) => ({
   "ai-chat": {
     enabled: true,
     config: {
-      anthropicApiKey: env("ANTHROPIC_API_KEY"),
+      apiKey: env("ANTHROPIC_API_KEY"),
       chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
       systemPrompt: env(
         "AI_SYSTEM_PROMPT",
@@ -20,14 +20,6 @@ export default ({ env }) => ({
       searchSegmentSeconds: 30, // Segment size for BM25 search
     },
   },
-  "ai-sdk-yt-embeddings": {
-    enabled: true,
-    config: {
-      openAIApiKey: env("OPENAI_API_KEY"),
-      neonConnectionString: env("NEON_CONNECTION_STRING"),
-      embeddingModel: env("EMBEDDING_MODEL", "text-embedding-3-small"),
-    },
-  },
   "strapi-plugin-lms": {
     enabled: true,
   },
@@ -36,6 +28,9 @@ export default ({ env }) => ({
     enabled: true,
   },
   "strapi-plugin-music-manager": {
+    enabled: true,
+  },
+  "strapi-oauth-mcp-manager": {
     enabled: true,
   },
 });

@@ -17,7 +17,7 @@ export default [
     config: {
       origin: "*",
       headers: ["Content-Type", "Authorization", "Accept", "mcp-session-id"],
-      expose: ["mcp-session-id"],
+      expose: ["mcp-session-id", "WWW-Authenticate"],
     },
   },
   "strapi::poweredBy",

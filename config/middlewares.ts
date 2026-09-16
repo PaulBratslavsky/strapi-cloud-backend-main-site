@@ -20,7 +20,7 @@ export default [
     config: {
       origin: ["https://deserving-harmony-9f5ca04daf.strapiapp.com"],
       headers: ["Content-Type", "Authorization", "Accept", "mcp-session-id"],
-      expose: ["mcp-session-id"],
+      expose: ["mcp-session-id", "WWW-Authenticate"],
     },
   },
   "strapi::poweredBy",
