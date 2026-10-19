@@ -1,13 +1,16 @@
 export default ({ env }) => ({
-  "ai-chat": {
+  "tanstack-ai": {
     enabled: true,
     config: {
-      apiKey: env("ANTHROPIC_API_KEY"),
-      chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
-      systemPrompt: env(
-        "AI_SYSTEM_PROMPT",
-        "You are a helpful AI assistant for this Strapi CMS. Answer questions clearly and concisely. Use your available tools to look up content when needed.",
-      ),
+      chat: {
+        provider: "anthropic",
+        apiKey: env("ANTHROPIC_API_KEY"),
+        model: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
+        systemPrompt: env(
+          "AI_SYSTEM_PROMPT",
+          "You are a helpful AI assistant for this Strapi CMS. Answer questions clearly and concisely. Use your available tools to look up content when needed.",
+        ),
+      },
     },
   },
   "youtube-transcripts": {
