@@ -714,234 +714,6 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface PluginAiChatConversation extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_chat_conversations';
-  info: {
-    displayName: 'AI Conversation';
-    pluralName: 'conversations';
-    singularName: 'conversation';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::ai-chat.conversation'
-    > &
-      Schema.Attribute.Private;
-    messages: Schema.Attribute.JSON & Schema.Attribute.Required;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'New conversation'>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginAiChatMemory extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_chat_memories';
-  info: {
-    displayName: 'AI Memory';
-    pluralName: 'memories';
-    singularName: 'memory';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
-    category: Schema.Attribute.Enumeration<
-      ['general', 'preference', 'personal', 'project']
-    > &
-      Schema.Attribute.DefaultTo<'general'>;
-    content: Schema.Attribute.RichText & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::ai-chat.memory'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginAiChatNote extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_chat_notes';
-  info: {
-    displayName: 'AI Note';
-    pluralName: 'notes';
-    singularName: 'note';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
-    category: Schema.Attribute.Enumeration<
-      ['research', 'snippet', 'idea', 'reference']
-    > &
-      Schema.Attribute.DefaultTo<'research'>;
-    content: Schema.Attribute.RichText & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::ai-chat.note'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    source: Schema.Attribute.String;
-    tags: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginAiChatPublicMemory extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_chat_public_memories';
-  info: {
-    displayName: 'AI Shared Memory';
-    pluralName: 'public-memories';
-    singularName: 'public-memory';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    category: Schema.Attribute.Enumeration<
-      ['general', 'faq', 'product', 'policy']
-    > &
-      Schema.Attribute.DefaultTo<'general'>;
-    content: Schema.Attribute.Text & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::ai-chat.public-memory'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface PluginAiChatTask extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_chat_tasks';
-  info: {
-    displayName: 'AI Task';
-    pluralName: 'tasks';
-    singularName: 'task';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: true;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
-    consequence: Schema.Attribute.Integer &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 5;
-          min: 1;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<3>;
-    content: Schema.Attribute.RichText;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    done: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    dueDate: Schema.Attribute.Date;
-    impact: Schema.Attribute.Integer &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 5;
-          min: 1;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<3>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::ai-chat.task'
-    > &
-      Schema.Attribute.Private;
-    priority: Schema.Attribute.Enumeration<
-      ['low', 'medium', 'high', 'urgent']
-    > &
-      Schema.Attribute.DefaultTo<'medium'>;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1814,6 +1586,132 @@ export interface PluginStrapiPluginMusicManagerSong
   };
 }
 
+export interface PluginTanstackAiConversation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'tanstack_ai_conversations';
+  info: {
+    displayName: 'TanStack AI Conversation';
+    pluralName: 'conversations';
+    singularName: 'conversation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::tanstack-ai.conversation'
+    > &
+      Schema.Attribute.Private;
+    messages: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'New conversation'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginTanstackAiMemory extends Struct.CollectionTypeSchema {
+  collectionName: 'tanstack_ai_memories';
+  info: {
+    displayName: 'TanStack AI Memory';
+    pluralName: 'memories';
+    singularName: 'memory';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    category: Schema.Attribute.Enumeration<
+      ['general', 'preference', 'personal', 'project']
+    > &
+      Schema.Attribute.DefaultTo<'general'>;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::tanstack-ai.memory'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface PluginTanstackAiNote extends Struct.CollectionTypeSchema {
+  collectionName: 'tanstack_ai_notes';
+  info: {
+    displayName: 'TanStack AI Note';
+    pluralName: 'notes';
+    singularName: 'note';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    adminUserId: Schema.Attribute.Integer & Schema.Attribute.Required;
+    category: Schema.Attribute.Enumeration<
+      ['research', 'snippet', 'idea', 'reference']
+    > &
+      Schema.Attribute.DefaultTo<'research'>;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::tanstack-ai.note'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    source: Schema.Attribute.String;
+    tags: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Struct.CollectionTypeSchema {
   collectionName: 'files';
   info: {
@@ -2116,6 +2014,7 @@ export interface PluginYoutubeTranscriptsTranscript
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    thumbnails: Schema.Attribute.JSON;
     thumbnailUrl: Schema.Attribute.String;
     title: Schema.Attribute.String;
     transcriptWithTimeCodes: Schema.Attribute.JSON;
@@ -2124,6 +2023,7 @@ export interface PluginYoutubeTranscriptsTranscript
       Schema.Attribute.Private;
     videoId: Schema.Attribute.String;
     videoPublishedAt: Schema.Attribute.String;
+    viewCount: Schema.Attribute.BigInteger;
   };
 }
 
@@ -2145,11 +2045,6 @@ declare module '@strapi/strapi' {
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::page.page': ApiPagePage;
       'api::tag.tag': ApiTagTag;
-      'plugin::ai-chat.conversation': PluginAiChatConversation;
-      'plugin::ai-chat.memory': PluginAiChatMemory;
-      'plugin::ai-chat.note': PluginAiChatNote;
-      'plugin::ai-chat.public-memory': PluginAiChatPublicMemory;
-      'plugin::ai-chat.task': PluginAiChatTask;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::forms.ai-provider-config': PluginFormsAiProviderConfig;
@@ -2168,6 +2063,9 @@ declare module '@strapi/strapi' {
       'plugin::strapi-plugin-lms.lms-lesson': PluginStrapiPluginLmsLmsLesson;
       'plugin::strapi-plugin-music-manager.artist': PluginStrapiPluginMusicManagerArtist;
       'plugin::strapi-plugin-music-manager.song': PluginStrapiPluginMusicManagerSong;
+      'plugin::tanstack-ai.conversation': PluginTanstackAiConversation;
+      'plugin::tanstack-ai.memory': PluginTanstackAiMemory;
+      'plugin::tanstack-ai.note': PluginTanstackAiNote;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;

@@ -1,23 +1,16 @@
 export default ({ env }) => ({
-  "ai-chat": {
+  "tanstack-ai": {
     enabled: true,
-    // Load a working copy of the plugin instead of the published package.
-    //
-    // Gated on an env var rather than hardcoded, because this file ships to
-    // production: a `resolve` path pointing outside the repo exists only on a
-    // dev machine and would fail the deployed boot. Set AI_SDK_LOCAL_PATH in
-    // your local .env (gitignored) to link; leave it unset anywhere else and
-    // the npm release is used.
-    ...(env("AI_SDK_LOCAL_PATH")
-      ? { resolve: env("AI_SDK_LOCAL_PATH") }
-      : {}),
     config: {
-      apiKey: env("ANTHROPIC_API_KEY"),
-      chatModel: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
-      systemPrompt: env(
-        "AI_SYSTEM_PROMPT",
-        "You are a helpful AI assistant for this Strapi CMS. Answer questions clearly and concisely. Use your available tools to look up content when needed.",
-      ),
+      chat: {
+        provider: "anthropic",
+        apiKey: env("ANTHROPIC_API_KEY"),
+        model: env("ANTHROPIC_MODEL", "claude-sonnet-5"),
+        systemPrompt: env(
+          "AI_SYSTEM_PROMPT",
+          "You are a helpful AI assistant for this Strapi CMS. Answer questions clearly and concisely. Use your available tools to look up content when needed.",
+        ),
+      },
     },
   },
   "youtube-transcripts": {
@@ -47,10 +40,10 @@ export default ({ env }) => ({
   'strapi-plugin-music-manager': {
     enabled: true,
   },
-  // OAuth sign-in for the built-in /mcp server. Same local-link pattern as
-  // ai-chat: set OAUTH_MCP_LOCAL_PATH in your local .env to load the working
-  // copy in ../plugins/strapi-oauth-mcp-manager (run `npm run build` there
-  // after changes; Strapi loads its dist/).
+  // OAuth sign-in for the built-in /mcp server. To load the working copy in
+  // ../plugins/strapi-oauth-mcp-manager instead of the npm release, set
+  // OAUTH_MCP_LOCAL_PATH in your local .env (run `npm run build` there after
+  // changes; Strapi loads its dist/).
   'strapi-oauth-mcp-manager': {
     enabled: true,
     ...(env("OAUTH_MCP_LOCAL_PATH")
