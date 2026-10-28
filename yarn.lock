@@ -12800,7 +12800,7 @@ __metadata:
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.2"
     strapi-plugin-tanstack-ai: "npm:^1.7.0"
-    strapi-plugin-youtube-transcripts: "npm:^2.6.1"
+    strapi-plugin-youtube-transcripts: "npm:^2.6.2"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
   languageName: unknown
@@ -14892,9 +14892,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-youtube-transcripts@npm:^2.6.1":
-  version: 2.6.1
-  resolution: "strapi-plugin-youtube-transcripts@npm:2.6.1"
+"strapi-plugin-youtube-transcripts@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "strapi-plugin-youtube-transcripts@npm:2.6.2"
   dependencies:
     "@strapi/design-system": "npm:^2.0.0-rc.12"
     "@strapi/icons": "npm:^2.0.0-rc.12"
@@ -14912,7 +14912,7 @@ __metadata:
   peerDependenciesMeta:
     strapi-plugin-ai-chat:
       optional: true
-  checksum: 10c0/f87761dcdd34dc826f4f47832b3ef2b06652f311490ba9c14a73b5bb6141ffc60bd0d116e276c89462413da1da72ebbe9518ebb9866fef3f290b71883f0bb328
+  checksum: 10c0/adc12d62446a100772038fba15b963a66707349da2713eb8304878c8a484f3ed52ad21284f5bcc8593958b6a9603dc5cf452b4a5c5b8d7bb02439c8210109b76
   languageName: node
   linkType: hard
 
