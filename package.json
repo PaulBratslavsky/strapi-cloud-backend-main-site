@@ -28,7 +28,7 @@
     "strapi-plugin-lms": "0.0.2",
     "strapi-plugin-music-manager": "^0.2.2",
     "strapi-plugin-tanstack-ai": "^1.7.0",
-    "strapi-plugin-youtube-transcripts": "^2.6.1",
+    "strapi-plugin-youtube-transcripts": "^2.6.2",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
