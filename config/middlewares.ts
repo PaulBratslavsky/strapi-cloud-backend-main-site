@@ -25,7 +25,12 @@ export default [
   },
   "strapi::poweredBy",
   "strapi::query",
-  "strapi::body",
+  {
+    // yt-kb videos carry embeddings and a search index; one record can pass
+    // the default 1 MB when copying content in (copy-content.mjs).
+    name: "strapi::body",
+    config: { jsonLimit: "10mb" },
+  },
   "strapi::session",
   "strapi::favicon",
   "strapi::public",

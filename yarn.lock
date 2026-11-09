@@ -13520,7 +13520,7 @@ __metadata:
     strapi-plugin-lms: "npm:0.0.2"
     strapi-plugin-music-manager: "npm:^0.2.2"
     strapi-plugin-tanstack-ai: "npm:^1.7.0"
-    strapi-plugin-yt-kb: "npm:0.1.0"
+    strapi-plugin-yt-kb: "npm:0.1.1"
     styled-components: "npm:^6.0.0"
     typescript: "npm:^5"
   languageName: unknown
@@ -15587,16 +15587,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strapi-plugin-yt-kb@npm:0.1.0":
-  version: 0.1.0
-  resolution: "strapi-plugin-yt-kb@npm:0.1.0"
+"strapi-plugin-yt-kb@npm:0.1.1":
+  version: 0.1.1
+  resolution: "strapi-plugin-yt-kb@npm:0.1.1"
   dependencies:
     undici: "npm:6.29.1"
     youtubei.js: "npm:17.2.0"
   peerDependencies:
     "@strapi/strapi": ^5.61.0
     "@strapi/utils": ^5.61.0
-  checksum: 10c0/0d1ee858220ad9272bf98c8fc0c51245b451406dd37c053252895112712031f09728923b7316e99d812e473a362f4b7506e192554d41647184348922ad402621
+  checksum: 10c0/e005d912f9be017ff6b4b0dd376284783b6d6f6578984ae391aba0940056c1eaeb545f31fa4bcc5bb7f6b478a7d7a5e61d7808975fe1f6b4e939935f217f0326
   languageName: node
   linkType: hard
 
