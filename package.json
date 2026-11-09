@@ -15,9 +15,9 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.60.0",
-    "@strapi/plugin-users-permissions": "5.60.0",
-    "@strapi/strapi": "5.60.0",
+    "@strapi/plugin-cloud": "5.61.0",
+    "@strapi/plugin-users-permissions": "5.61.0",
+    "@strapi/strapi": "5.61.0",
     "better-sqlite3": "11.3.0",
     "ocyris-strapi-builder-mcp": "^1.0.4",
     "react": "^18.0.0",
@@ -28,7 +28,7 @@
     "strapi-plugin-lms": "0.0.2",
     "strapi-plugin-music-manager": "^0.2.2",
     "strapi-plugin-tanstack-ai": "^1.7.0",
-    "strapi-plugin-youtube-transcripts": "^2.6.2",
+    "strapi-plugin-yt-kb": "0.1.0",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
