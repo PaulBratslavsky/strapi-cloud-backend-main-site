@@ -18,7 +18,7 @@ export default ({ env }) => ({
     config: {
       proxyUrl: env("PROXY_URL", ""), // same variable youtube-transcripts used
       mcp: true,
-      import: false,
+      import: env.bool("YT_KB_IMPORT", false), // true only while copying content in
       backfillMetadata: false,
     },
   },
