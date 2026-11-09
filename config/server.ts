@@ -5,8 +5,8 @@ export default ({ env }) => ({
     keys: env.array('APP_KEYS'),
   },
   // Strapi's built-in MCP server (5.47+). Serves /mcp over streamable HTTP,
-  // authenticated with Admin API tokens. tanstack-ai, yt-kb and
-  // Strapi's own content-manager register their tools on it at bootstrap.
+  // authenticated with Admin API tokens. yt-kb registers its tools in
+  // register(); tanstack-ai and Strapi's content-manager in bootstrap().
   mcp: {
     enabled: env.bool('MCP_ENABLED', true),
   },
