@@ -39,7 +39,7 @@ function briefMd(b) {
 
 function growthMd(months, experiments) {
   const kept = experiments.filter((e) => e.verdict === 'keep');
-  const out = ['# CWP growth log', '', "Generated from the companion's memory (recall.py growth); change it there.",
+  const out = ['# CWP growth log', '', "Generated from the companion's memory; change it with companion__put.",
     '', '## Standards', ''];
   out.push(...(kept.length ? kept.map((e) => `- ${e.change} (kept after ${e.month}: ${text(e.result || '')})`)
     : ['_Changes that held for a month and are now how every video is made. None yet._']));

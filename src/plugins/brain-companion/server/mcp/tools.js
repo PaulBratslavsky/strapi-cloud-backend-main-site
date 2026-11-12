@@ -21,10 +21,12 @@ const origin = z.string().optional().describe('which machine or agent writes, e.
 const fields = z.record(z.string(), z.any()).optional().describe('fields to set; null or "" removes one');
 
 const TOOLS = [
-  { name: 'brief', writes: false, input: z.object({}),
+  { name: 'brief', writes: false,
+    input: z.object({ today: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
+      .describe("the caller's local date, YYYY-MM-DD; the server's UTC date when left out") }),
     description: "What to know first: open threads (Claude's and Paul's), running experiments (and whether one is "
       + "due for judging), this month's growth goals, videos not yet public, and the Standards.",
-    run: async (repo) => briefMd(await memory.brief(repo)) },
+    run: async (repo, a) => briefMd(await memory.brief(repo, a.today)) },
   { name: 'search', writes: false, input: z.object({ terms: z.string(), kind: kind.optional() }),
     description: "Search every record's key, title and fields (each word must match, as a prefix).",
     run: async (repo, a) => ({ records: await memory.search(repo, a.terms, a.kind) }) },
