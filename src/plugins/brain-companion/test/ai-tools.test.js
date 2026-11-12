@@ -35,3 +35,11 @@ test('a call runs against the repo service of the strapi it is given', async () 
 test('the source has a label for the Tools menu', () => {
   assert.equal(aiTools({ strapi: fakeStrapi({}) }).getMeta().label, 'Brain companion');
 });
+
+test('the descriptions say who paul is and that a status is recorded, not live', () => {
+  const tools = aiTools({ strapi: fakeStrapi({}) }).getTools();
+  const brief = tools.find((t) => t.name === 'brief').description;
+  assert.match(brief, /owner "paul" is Paul, the person you are talking to/);
+  assert.match(brief, /not a live check/);
+  for (const t of tools) assert.match(t.description, /owner "paul" is (Paul, )?the person you are talking to/);
+});
