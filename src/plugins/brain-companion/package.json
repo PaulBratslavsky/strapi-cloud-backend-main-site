@@ -1,0 +1,17 @@
+{
+  "name": "brain-companion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The personal-brain companion's memory (threads, decisions, videos, growth months, experiments) as Strapi content with MCP tools, shared by every Mac the brain runs on.",
+  "main": "strapi-server.js",
+  "strapi": {
+    "kind": "plugin",
+    "name": "brain-companion",
+    "displayName": "Brain companion",
+    "description": "The brain's shared memory, over MCP."
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT"
+}

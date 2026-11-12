@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brain_companion_events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Brain record event",
+    "description": "One change to a memory record, kept forever: what changed, when and from which machine."
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {
+    "content-manager": { "visible": true },
+    "content-type-builder": { "visible": false }
+  },
+  "attributes": {
+    "kind": { "type": "string", "required": true },
+    "key": { "type": "string", "required": true },
+    "at": { "type": "string", "required": true },
+    "action": { "type": "string", "required": true },
+    "change": { "type": "json" },
+    "origin": { "type": "string" }
+  }
+}

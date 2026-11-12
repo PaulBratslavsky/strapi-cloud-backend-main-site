@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brain_companion_records",
+  "info": {
+    "singularName": "record",
+    "pluralName": "records",
+    "displayName": "Brain record",
+    "description": "One memory record: a thread, decision, video, growth month or experiment."
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {
+    "content-manager": { "visible": true },
+    "content-type-builder": { "visible": false }
+  },
+  "attributes": {
+    "uid": { "type": "string", "required": true, "unique": true },
+    "kind": { "type": "enumeration", "enum": ["thread", "decision", "video", "month", "experiment"], "required": true },
+    "key": { "type": "string", "required": true },
+    "title": { "type": "string", "required": true },
+    "state": { "type": "string", "required": true },
+    "payload": { "type": "json" },
+    "tags": { "type": "json" },
+    "created": { "type": "string" },
+    "updated": { "type": "string" }
+  }
+}
