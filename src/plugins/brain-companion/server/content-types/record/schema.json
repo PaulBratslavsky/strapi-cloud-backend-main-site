@@ -16,7 +16,7 @@
     "uid": { "type": "string", "required": true, "unique": true },
     "kind": { "type": "enumeration", "enum": ["thread", "decision", "video", "month", "experiment"], "required": true },
     "key": { "type": "string", "required": true },
-    "title": { "type": "string", "required": true },
+    "title": { "type": "text", "required": true },
     "state": { "type": "string", "required": true },
     "payload": { "type": "json" },
     "tags": { "type": "json" },

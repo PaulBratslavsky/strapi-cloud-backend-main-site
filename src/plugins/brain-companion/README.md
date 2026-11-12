@@ -40,7 +40,8 @@ It prints `ACCESS_KEY=...` on stdout. Revoke a token in the admin.
 
 ## Data
 
-Two content types: `record` (one row per kind and key; fields in `payload`, status in `state`,
+Two content types: `record` (one row per kind and key; the title as `text`, since titles can pass
+Postgres's 255-character `string` limit; fields in `payload`, status in `state`,
 because Strapi 5 reserves `status`) and `event` (one row per change, never deleted). Records are
 never deleted either: a thread is closed, a decision superseded. Both types are hidden from the
 Content Manager, so every change goes through the tools: validated, with its event, in one transaction.
