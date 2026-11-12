@@ -5,10 +5,14 @@
 // scripts/companion/store.py (plan_put, diff, apply_put, brief, search, history, export).
 //
 // A repository has: get(kind, key), all({kind, status}), save(record, isNew), addEvent(event),
-// events({kind, key, limit}), findEvent(event). Records are plain objects:
+// events({kind, key, limit}), findEvent(event), and optionally transaction(fn). Records are plain objects:
 // {kind, key, title, status, ...fields, tags, created, updated}.
 
 const { KINDS, CLOSED, RecordError, validate, kindSpec } = require('./kinds');
+
+// One unit of work: the repository's transaction when it has one, so a record never changes
+// without its event, and an import is all or nothing.
+const atomically = (repo, fn) => (repo.transaction ? repo.transaction(fn) : fn());
 
 const META = new Set(['kind', 'key', 'status', 'tags', 'created', 'updated']);
 const now = () => new Date().toISOString().replace(/\.\d{3}Z$/, '+00:00');
@@ -55,9 +59,11 @@ async function applyPut(repo, plan, origin) {
   const fresh = diff(before, rec);
   if (fresh.action === 'none') return fresh;
   const stamp = now();
-  await repo.save({ ...rec, created: before ? before.created : stamp, updated: stamp }, !before);
-  await repo.addEvent({ kind: rec.kind, key: rec.key, at: stamp, action: fresh.action, change: fresh.changes,
-    origin: origin || null });
+  await atomically(repo, async () => {
+    await repo.save({ ...rec, created: before ? before.created : stamp, updated: stamp }, !before);
+    await repo.addEvent({ kind: rec.kind, key: rec.key, at: stamp, action: fresh.action, change: fresh.changes,
+      origin: origin || null });
+  });
   return fresh;
 }
 
@@ -87,7 +93,9 @@ async function search(repo, terms, kind, limit = 20) {
   for (const r of rows) {
     const text = [r.key, r.title, r.status, ...(r.tags || []), ...Object.values(fieldsOf(r)).map((v) =>
       (typeof v === 'string' ? v : JSON.stringify(v)))].join(' ').toLowerCase();
-    const tokens = text.match(/[\w.-]+/g) || [];
+    const found = text.match(/[\w.-]+/g) || [];
+    // `fix-widget` is found by `fix-widget`, `fix` or `widget`.
+    const tokens = [...found, ...found.flatMap((w) => (/[.-]/.test(w) ? w.split(/[.-]+/).filter(Boolean) : []))];
     if (words.every((w) => tokens.some((t) => t.startsWith(w)))) {
       const hits = words.reduce((n, w) => n + tokens.filter((t) => t.startsWith(w)).length, 0);
       scored.push([hits, r]);
@@ -130,31 +138,52 @@ async function exportAll(repo) {
 }
 
 /** Bring in a personal-brain `recall.py export`: records it lacks are created, records that differ
- *  are replaced by the export's version, and events it lacks are added. Running it twice changes
- *  nothing. Without confirm it only counts. */
+ *  are replaced by the export's version, and events it lacks are added, oldest first so history reads
+ *  newest first afterwards. Everything is checked before the first write, and a confirmed import is
+ *  one transaction: all of it or none. Running it twice changes nothing. Without confirm it only counts. */
 async function importExport(repo, data, { confirm = false } = {}) {
   if (!data || !Array.isArray(data.records) || !Array.isArray(data.events)) {
     throw new RecordError('an export holds "records" and "events" lists (recall.py export)');
   }
+  const records = data.records.map((raw, i) => {
+    const fields = fieldsOf(raw);
+    try {
+      validate(raw.kind, raw.key, fields, raw.status);
+    } catch (err) {
+      throw new RecordError(`record ${i + 1} (${raw.kind}/${raw.key}): ${err.message}; nothing was imported`);
+    }
+    return { raw, next: { kind: raw.kind, key: raw.key, status: raw.status, ...fields, tags: [...(raw.tags || [])].sort() } };
+  });
+  const keys = new Set(records.map((r) => `${r.raw.kind}/${r.raw.key}`));
+  const events = data.events.map((e, i) => {
+    const ok = KINDS[e.kind] && typeof e.key === 'string' && typeof e.at === 'string' && typeof e.action === 'string';
+    if (!ok) throw new RecordError(`event ${i + 1} lacks kind, key, at or action; nothing was imported`);
+    return { i, event: { kind: e.kind, key: e.key, at: e.at, action: e.action, change: e.change || {}, origin: e.origin || 'import' } };
+  });
+  for (const { event } of events) {
+    if (!keys.has(`${event.kind}/${event.key}`) && !(await repo.get(event.kind, event.key))) {
+      throw new RecordError(`an event for ${event.kind}/${event.key} has no record; nothing was imported`);
+    }
+  }
+  // The export lists events newest first; insert oldest first (by time, then reverse export order).
+  events.sort((a, b) => (a.event.at === b.event.at ? b.i - a.i : (a.event.at < b.event.at ? -1 : 1)));
+
   const counts = { records: { create: 0, update: 0, same: 0 }, events: { add: 0, same: 0 } };
-  for (const raw of data.records) {
-    const rec = { ...raw };
-    const fields = fieldsOf(rec);
-    validate(rec.kind, rec.key, fields, rec.status);
-    const before = await repo.get(rec.kind, rec.key);
-    const next = { kind: rec.kind, key: rec.key, status: rec.status, ...fields, tags: [...(rec.tags || [])].sort() };
+  const plan = [];
+  for (const { raw, next } of records) {
+    const before = await repo.get(raw.kind, raw.key);
     const d = diff(before, next);
     if (d.action === 'none') { counts.records.same += 1; continue; }
     counts.records[d.action] += 1;
-    if (confirm) {
-      await repo.save({ ...next, created: rec.created || now(), updated: rec.updated || now() }, !before);
-    }
+    plan.push(() => repo.save({ ...next, created: raw.created || now(), updated: raw.updated || now() }, !before));
   }
-  for (const e of data.events) {
-    const event = { kind: e.kind, key: e.key, at: e.at, action: e.action, change: e.change, origin: e.origin || 'import' };
+  for (const { event } of events) {
     if (await repo.findEvent(event)) { counts.events.same += 1; continue; }
     counts.events.add += 1;
-    if (confirm) await repo.addEvent(event);
+    plan.push(() => repo.addEvent(event));
+  }
+  if (confirm && plan.length) {
+    await atomically(repo, async () => { for (const step of plan) await step(); });
   }
   return { ...counts, written: Boolean(confirm) };
 }

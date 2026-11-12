@@ -64,6 +64,15 @@ class RecordError extends Error {
   }
 }
 
+// A real calendar day, not only the YYYY-MM-DD shape (2026-02-31 is refused).
+function isDate(v) {
+  const s = String(v);
+  if (!DATE.test(s)) return false;
+  const [y, m, d] = s.split('-').map(Number);
+  const t = new Date(Date.UTC(y, m - 1, d));
+  return t.getUTCFullYear() === y && t.getUTCMonth() === m - 1 && t.getUTCDate() === d;
+}
+
 const isEmpty = (v) => v === null || v === undefined || v === '' || (Array.isArray(v) && v.length === 0);
 const repr = (v) => (typeof v === 'string' ? `'${v}'` : JSON.stringify(v));
 
@@ -99,7 +108,7 @@ function validate(kind, key, data, status) {
     }
   }
   for (const field of spec.dates) {
-    if (field in data && !DATE.test(String(data[field]))) {
+    if (field in data && !isDate(data[field])) {
       throw new RecordError(`${kind} ${field} is a date, YYYY-MM-DD, not ${repr(data[field])}`);
     }
   }
@@ -114,4 +123,4 @@ function validate(kind, key, data, status) {
   }
 }
 
-module.exports = { KINDS, CLOSED, RUNGS, RecordError, validate, kindSpec, isEmpty };
+module.exports = { KINDS, CLOSED, RUNGS, RecordError, validate, kindSpec, isEmpty, isDate };

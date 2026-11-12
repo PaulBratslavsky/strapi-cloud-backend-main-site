@@ -12,7 +12,7 @@ kinds, statuses, checks and tools. A local plugin for now, to move to npm later.
 
 | Tool | Does |
 | --- | --- |
-| `companion__brief` | What a session reads first: open threads, running experiments, the month, videos in flight, Standards |
+| `companion__brief` | What a session reads first: open threads, running experiments, the month, videos in flight, Standards; pass `today` (the caller's local date) or it uses the server's UTC date |
 | `companion__search` | Every term must match a word of the key, title, fields or tags, as a prefix |
 | `companion__list` | Records by kind and/or status |
 | `companion__show` | One record with its history |
@@ -42,7 +42,8 @@ It prints `ACCESS_KEY=...` on stdout. Revoke a token in the admin.
 
 Two content types: `record` (one row per kind and key; fields in `payload`, status in `state`,
 because Strapi 5 reserves `status`) and `event` (one row per change, never deleted). Records are
-never deleted either: a thread is closed, a decision superseded.
+never deleted either: a thread is closed, a decision superseded. Both types are hidden from the
+Content Manager, so every change goes through the tools: validated, with its event, in one transaction.
 
 ## Tests
 

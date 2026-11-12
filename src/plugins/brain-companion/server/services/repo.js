@@ -54,6 +54,10 @@ module.exports = ({ strapi }) => {
       const rows = await events().findMany({ where, orderBy: { id: 'desc' }, limit });
       return rows.map(toEvent);
     },
+    // Strapi's transaction: every db.query inside fn joins it, so all of fn commits or none does.
+    transaction(fn) {
+      return strapi.db.transaction(() => fn());
+    },
     async findEvent(e) {
       const rows = await events().findMany({ where: { kind: e.kind, key: e.key, at: e.at, action: e.action } });
       return rows.some((r) => sameChange(r.change, e.change));

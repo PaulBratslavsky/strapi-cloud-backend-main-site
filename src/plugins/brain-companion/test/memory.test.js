@@ -27,6 +27,16 @@ function memRepo() {
       return log.filter((e) => (!kind || e.kind === kind) && (!key || e.key === key)).reverse().slice(0, limit);
     },
     async findEvent(e) { return log.some((x) => sameEvent(x, e)); },
+    transactions: 0,
+    async transaction(fn) {
+      // All or nothing, like the database: undo every write fn made when it throws.
+      this.transactions += 1;
+      const saved = new Map([...records].map(([k, v]) => [k, structuredClone(v)]));
+      const length = log.length;
+      try { return await fn(); } catch (err) {
+        records.clear(); for (const [k, v] of saved) records.set(k, v); log.length = length; throw err;
+      }
+    },
   };
 }
 
@@ -123,4 +133,56 @@ test('import brings in an export once; a second run changes nothing', async () =
   const second = await memory.importExport(target, exported, { confirm: true });
   assert.deepEqual([second.records.same, second.records.create, second.records.update, second.events.add], [2, 0, 0, 0]);
   await assert.rejects(memory.importExport(target, { records: 'x' }), RecordError);
+});
+
+test('a write and its event run in one transaction', async () => {
+  const repo = memRepo();
+  await memory.put(repo, { kind: 'thread', key: 'tx', fields: { title: 'T', owner: 'claude' }, confirm: true });
+  assert.equal(repo.transactions, 1);
+  repo.addEvent = async () => { throw new Error('event store down'); };
+  await assert.rejects(memory.put(repo, { kind: 'thread', key: 'tx', fields: { why: 'w' }, confirm: true }), /event store down/);
+  assert.equal((await repo.get('thread', 'tx')).why, undefined, 'the record change was rolled back');
+});
+
+test('dates must be real calendar days', async () => {
+  const repo = memRepo();
+  await assert.rejects(memory.put(repo, { kind: 'thread', key: 'd', fields: { title: 'T', owner: 'paul', due: '2026-02-31' }, confirm: true }), RecordError);
+  await memory.put(repo, { kind: 'thread', key: 'd', fields: { title: 'T', owner: 'paul', due: '2028-02-29' }, confirm: true });
+});
+
+test('search finds a word inside a hyphenated key', async () => {
+  const repo = memRepo();
+  await memory.put(repo, { kind: 'thread', key: 'fix-widget', fields: { title: 'Urgent', owner: 'claude' }, confirm: true });
+  assert.deepEqual((await memory.search(repo, 'widget')).map((r) => r.key), ['fix-widget']);
+  assert.deepEqual((await memory.search(repo, 'fix-wid')).map((r) => r.key), ['fix-widget']);
+});
+
+test('import checks everything first: one bad record imports nothing', async () => {
+  const target = memRepo();
+  const data = { records: [
+    { kind: 'thread', key: 'good', title: 'Good', status: 'open', owner: 'claude', tags: [] },
+    { kind: 'thread', key: 'bad', title: 'Bad', status: 'open', owner: 'bob', tags: [] },
+  ], events: [] };
+  await assert.rejects(memory.importExport(target, data, { confirm: true }), /record 2 \(thread\/bad\).*nothing was imported/);
+  assert.equal(target.records.size, 0);
+  await assert.rejects(memory.importExport(target, { records: [], events: [{ kind: 'thread', key: 'orphan', at: 'x', action: 'create' }] }, { confirm: true }), /has no record/);
+});
+
+test('imported history keeps its order: show lists newest first', async () => {
+  const source = memRepo();
+  await memory.put(source, { kind: 'thread', key: 'h', fields: { title: 'H', owner: 'claude' }, confirm: true });
+  await memory.put(source, { kind: 'thread', key: 'h', fields: { why: 'one' }, confirm: true });
+  await memory.close(source, { kind: 'thread', key: 'h', confirm: true });
+  const exported = JSON.parse(JSON.stringify(await memory.exportAll(source)));
+  const target = memRepo();
+  await memory.importExport(target, exported, { confirm: true });
+  assert.equal(target.transactions, 1);
+  const shown = await memory.show(target, 'thread', 'h');
+  assert.deepEqual(shown.history.map((e) => e.action), ['update', 'update', 'create']);
+  assert.ok('status' in shown.history[0].change, 'the newest event (the close) is first');
+});
+
+test('the brief can use the caller\'s date', async () => {
+  const repo = memRepo();
+  assert.equal((await memory.brief(repo, '2026-11-11')).today, '2026-11-11');
 });

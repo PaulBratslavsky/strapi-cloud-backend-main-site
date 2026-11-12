@@ -23,15 +23,13 @@ async function main() {
     const unknown = actions.filter((a) => !known.has(a));
     if (unknown.length) throw new Error(`Unknown action(s): ${unknown.join(', ')}; is the plugin enabled?`);
     const name = `brain-companion${readOnly ? '-read' : ''}-${Date.now()}`;
+    // adminPermissions go through create(), so Strapi checks them against the owner's own
+    // permissions; a token can never get more than the admin who owns it.
     const token = await app.service('admin::api-token-admin').create({
       kind: 'admin', name, description: 'personal-brain companion memory over MCP', lifespan: null,
       adminUserOwner: user.id,
+      adminPermissions: actions.map((action) => ({ action, subject: null, properties: {}, conditions: [] })),
     }, user);
-    for (const action of actions) {
-      await app.db.query('admin::permission').create({
-        data: { action, subject: null, properties: {}, conditions: [], apiToken: token.id },
-      });
-    }
     process.stdout.write(`ACCESS_KEY=${token.accessKey}\n`);
     console.error(`minted ${name} (id ${token.id}) with ${actions.length} action(s)`);
   } finally {
