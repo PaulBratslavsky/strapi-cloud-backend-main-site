@@ -39,6 +39,12 @@ export default ({ env }) => ({
   'strapi-plugin-music-manager': {
     enabled: true,
   },
+  // personal-brain's shared memory (threads, decisions, videos, growth months, experiments) as
+  // MCP tools named companion__*. A local plugin for now; it moves to npm later.
+  'brain-companion': {
+    enabled: true,
+    resolve: './src/plugins/brain-companion',
+  },
   // OAuth sign-in for the built-in /mcp server. To load the working copy in
   // ../plugins/strapi-oauth-mcp-manager instead of the npm release, set
   // OAUTH_MCP_LOCAL_PATH in your local .env (run `npm run build` there after
