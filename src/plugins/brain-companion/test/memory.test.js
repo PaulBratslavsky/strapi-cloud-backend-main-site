@@ -186,3 +186,11 @@ test('the brief can use the caller\'s date', async () => {
   const repo = memRepo();
   assert.equal((await memory.brief(repo, '2026-11-11')).today, '2026-11-11');
 });
+
+test('a repeat import finds events whose change came back with its keys reordered (Postgres jsonb)', async () => {
+  const { sameValue } = require('../server/core/canonical');
+  assert.ok(sameValue({ title: ['a', 'b'], status: [null, 'open'] }, { status: [null, 'open'], title: ['a', 'b'] }));
+  assert.ok(sameValue({ a: { y: 1, x: [{ q: 1, p: 2 }] } }, { a: { x: [{ p: 2, q: 1 }], y: 1 } }));
+  assert.ok(!sameValue({ a: [1, 2] }, { a: [2, 1] }), 'array order still matters');
+  assert.ok(!sameValue({ a: 1 }, { a: '1' }));
+});

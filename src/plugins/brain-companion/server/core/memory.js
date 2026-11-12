@@ -9,6 +9,7 @@
 // {kind, key, title, status, ...fields, tags, created, updated}.
 
 const { KINDS, CLOSED, RecordError, validate, kindSpec } = require('./kinds');
+const { sameValue } = require('./canonical');
 
 // One unit of work: the repository's transaction when it has one, so a record never changes
 // without its event, and an import is all or nothing.
@@ -16,7 +17,7 @@ const atomically = (repo, fn) => (repo.transaction ? repo.transaction(fn) : fn()
 
 const META = new Set(['kind', 'key', 'status', 'tags', 'created', 'updated']);
 const now = () => new Date().toISOString().replace(/\.\d{3}Z$/, '+00:00');
-const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const same = sameValue;
 const fieldsOf = (rec) => Object.fromEntries(Object.entries(rec || {}).filter(([k]) => !META.has(k)));
 
 /** The plan for turning `before` (the stored record, or null) into `next`. */

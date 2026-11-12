@@ -21,7 +21,10 @@ const toRecord = (row) => (row ? {
 const toEvent = (row) => ({ at: row.at, action: row.action, kind: row.kind, key: row.key, change: row.change || {},
   origin: row.origin || null });
 
-const sameChange = (a, b) => JSON.stringify(a || {}) === JSON.stringify(b || {});
+const { sameValue } = require('../core/canonical');
+
+// By value, not key order: Postgres jsonb reorders an object's keys (see core/canonical.js).
+const sameChange = (a, b) => sameValue(a || {}, b || {});
 
 module.exports = ({ strapi }) => {
   const records = () => strapi.db.query(RECORD);
